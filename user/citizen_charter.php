@@ -21,7 +21,7 @@ include 'header.php';
 							<?php echo $showdata['1'];?>
 
 						</p>
-						<img src="<?php echo $showdata['2'];?>">
+						<img src="../backend/asset/img/citizen_charter/<?php echo $showdata['2'];?>" class="img-fluid" height="100%" width="100%">
 					</div>
 				</div>
 			</div>
