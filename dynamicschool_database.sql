@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 08, 2022 at 07:56 AM
+-- Generation Time: Aug 08, 2022 at 01:57 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -59,7 +59,7 @@ CREATE TABLE `citizen_charter` (
 --
 
 INSERT INTO `citizen_charter` (`id`, `title`, `image`) VALUES
-(1, 'Title', '534960289.png');
+(1, 'CR7', '534960289.png');
 
 -- --------------------------------------------------------
 
@@ -107,6 +107,25 @@ CREATE TABLE `exam_rules` (
 
 INSERT INTO `exam_rules` (`id`, `description`, `create_at`, `upload_at`) VALUES
 (1, '<ul><li style=\"padding: 0px; margin: 0px 0px 0.6em 1.3em;\">No folder is allowed in the Exam Hall- one board is sufficient to write on.</li><li style=\"padding: 0px; margin: 0px 0px 0.6em 1.3em;\">Students must carry their pen, eraser, sharpener (all is needed to write) in their hands or in a transparent plastic pencil box/bag.</li><li style=\"padding: 0px; margin: 0px 0px 0.6em 1.3em;\">Students are not to borrow anything from anybody during the examination.</li><li style=\"padding: 0px; margin: 0px 0px 0.6em 1.3em;\">Talking inside the exam hall is forbidden. The student may be asked to leave the room at the teacherâ€™s discretion.</li><li style=\"padding: 0px; margin: 0px 0px 0.6em 1.3em;\">When the examination starts, the student must write his/her name only on the question paper. No other writing is permitted.</li><li style=\"padding: 0px; margin: 0px 0px 0.6em 1.3em;\">Students must write their name, class and subject on the front page and on alternate pages. Students must also number their pages. They must mark the answer correctly.</li><li style=\"padding: 0px; margin: 0px 0px 0.6em 1.3em;\">An unmarked answer will not be corrected or marked.</li><li style=\"padding: 0px; margin: 0px 0px 0.6em 1.3em;\">The math rough work should be done on the right side of the answer script after drawing a 1.5-inch margin.</li><li style=\"padding: 0px; margin: 0px 0px 0.6em 1.3em;\">Students must not read the question paper before the bell rings to start the exam. The question paper will be placed upside down on their desks during this time. They must not write anything after the bell rings to end the exam.</li><li style=\"padding: 0px; margin: 0px 0px 0.6em 1.3em;\">Any student arriving later than half an hour of the scheduled exam time will not be permitted extra time.</li><li style=\"padding: 0px; margin: 0px 0px 0.6em 1.3em;\">No student may leave the exam hall 15 minutes before the allotted time.</li></ul>', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fees`
+--
+
+CREATE TABLE `fees` (
+  `id` int(200) NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `fees`
+--
+
+INSERT INTO `fees` (`id`, `title`, `image`) VALUES
+(1, 'tiles', '1599658203.png');
 
 -- --------------------------------------------------------
 
@@ -238,7 +257,10 @@ INSERT INTO `sub_menu` (`id`, `sl`, `main_menu`, `link_name`, `route_name`, `sta
 (9, 5, 15, 'History', '../website_settings/history.php', 1),
 (10, 7, 15, 'Infrastucture', '../website_settings/infrastucture.php', 1),
 (11, 8, 15, 'Rules Regulation', '../website_settings/rules_regulation.php', 1),
-(12, 9, 15, 'Citizen charter', '../website_settings/cityzen_charter.php', 1);
+(12, 9, 15, 'Citizen charter', '../website_settings/cityzen_charter.php', 1),
+(13, 10, 15, 'Student Info', '../website_settings/student_info.php', 1),
+(14, 11, 15, 'Yearly Work Plan', '../website_settings/yearly_work.php', 1),
+(15, 12, 15, 'FEES', '../website_settings/fees.php', 1);
 
 --
 -- Indexes for dumped tables
@@ -266,6 +288,12 @@ ALTER TABLE `create_admin`
 -- Indexes for table `exam_rules`
 --
 ALTER TABLE `exam_rules`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `fees`
+--
+ALTER TABLE `fees`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -334,6 +362,12 @@ ALTER TABLE `exam_rules`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `fees`
+--
+ALTER TABLE `fees`
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
@@ -367,7 +401,7 @@ ALTER TABLE `rules_regulation`
 -- AUTO_INCREMENT for table `sub_menu`
 --
 ALTER TABLE `sub_menu`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
