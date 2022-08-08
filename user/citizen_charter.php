@@ -9,19 +9,17 @@ include 'header.php';
 					<div class="left-body-boxtitle">
 						<b>সিটিজেন চার্টার</b>
 					</div>
-					<?php
-					$sql=$db->link->query("SELECT * FROM `citizen_charter` WHERE `id`=1");
-					if($sql)
-					{
-						$showdata=$sql->fetch_array();
-					}
-					?>
-					<div class="body-text">
-						<p>
-							<?php echo $showdata['1'];?>
+				<?php
+                   $data = $db->link->query("SELECT * FROM `citizen_charter` WHERE `id`=1");
+                   if($data)
+                   {
+                    $showdata = $data->fetch_assoc();
+                   } 
+				   ?>
 
-						</p>
-						<img src="<?php echo $showdata['2'];?>">
+
+					<div class="body-text">
+					<img src="../backend/asset/img/citizen_charter/<?php print $showdata['image']; ?>">
 					</div>
 				</div>
 			</div>
