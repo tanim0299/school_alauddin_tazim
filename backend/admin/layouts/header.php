@@ -33,6 +33,10 @@ if(!isset($_SESSION['email']))
 
 <!-- General CSS Files -->
 <link rel="stylesheet" href="../../assets/modules/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="../../assets/modules/bootstrap-daterangepicker/daterangepicker.css">
+
+
 <link rel="stylesheet" href="../../assets/modules/fontawesome/css/all.min.css">
 
 <!-- CSS Libraries -->
@@ -52,6 +56,8 @@ if(!isset($_SESSION['email']))
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 
 <link rel="stylesheet" href="../../assets/modules/izitoast/css/iziToast.min.css">
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
 </head>
 <body class="layout-4">

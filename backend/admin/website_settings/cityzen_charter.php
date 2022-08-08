@@ -27,6 +27,17 @@ include('../layouts/sidebar.php');
 
                             if($file)
                             {
+                                $path = '../../asset/img/citizen_charter/'.$showdata['image'];
+
+                                if(file_exists($path))
+                                {
+                                    unlink($path);
+                                }
+
+                            }
+
+                            if($file)
+                            {
                                 $extension = pathinfo($file, PATHINFO_EXTENSION);
 
                                 $image_name = rand().'.'.$extension;
