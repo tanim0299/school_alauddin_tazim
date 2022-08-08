@@ -13,7 +13,7 @@ include('../layouts/sidebar.php');
                     <form method="post">
                         <div class="input-single-box">
                             <label>Date</label>
-                            <input type="date" name="date" class="form-control"  required>
+                            <input type="text" name="date" class="form-control datepicker"  required autocomplete="off">
                         </div>
                         <div class="input-single-box">
                             <label>Title</label>

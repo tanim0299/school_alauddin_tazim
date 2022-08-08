@@ -10,11 +10,12 @@
     </div>
 </div>
 
+<script src="../../js/bootstrap-datepicker.min.js"></script>
+<script src="../../js/dtsel.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 
-<script src="http://dubai2bd.com/public/assets/vendor/jquery/jquery.min.js"></script>
+<script src="http://dubai2bd.com/public/assets/vendor/jquery/jquery.min.js"></>
 
 
 
@@ -25,7 +26,11 @@
 <script src="../../assets/bundles/lib.vendor.bundle.js"></script>
 <script src="../../js/CodiePie.js"></script>
 
+
 <!-- JS Libraies -->
+<script src="../../assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+
 <script src="../../assets/modules/jquery.sparkline.min.js"></script>
 <script src="../../assets/modules/chart.min.js"></script>
 <script src="../../assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
@@ -52,7 +57,7 @@
 
 <script src="../../assets/modules/izitoast/js/iziToast.min.js"></script>
 
-
+<script type="text/javascript" src="http://localhost/sbitaccounts/public/Backend/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
 
 
 
@@ -64,6 +69,58 @@
   window.history.replaceState( null, null, window.location.href );
 }
 </script>
+
+  <script type="text/javascript">
+    
+    //     instance = new dtsel.DTS('input[name="dateTimePicker"]',  {
+    //   showTime: true
+    // });
+    
+    instance = new dtsel.DTS('input[id="dateTimePicker"]',  {
+      showTime: false,
+      showDate: true
+    });
+    
+    instance = new dtsel.DTS('input[id="dateTimePicker"]',  {
+      dateFormat: "yyyy-mm-dd",
+    })
+    
+  </s>
+
+
+  <script type="text/javascript">
+        
+    //     instance = new dtsel.DTS('input[name="dateTimePicker"]',  {
+    //   showTime: true
+    // });
+    
+    instance = new dtsel.DTS('input[id="dateTimePicker"]',  {
+      showTime: false,
+      showDate: true
+    });
+    
+    instance = new dtsel.DTS('input[id="dateTimePicker"]',  {
+      dateFormat: "yyyy-mm-dd",
+    })
+    
+  </>
+
+  <script type="text/javascript">
+        
+    //     instance = new dtsel.DTS('input[name="dateTimePicker"]',  {
+    //   showTime: true
+    // });
+    
+    instance = new dtsel.DTS('input[id="dateTimePicker"]',  {
+      showTime: false,
+      showDate: true
+    });
+    
+    instance = new dtsel.DTS('input[id="dateTimePicker"]',  {
+      dateFormat: "yyyy-mm-dd",
+    })
+    
+  </script>
 
 
 
