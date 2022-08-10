@@ -6,14 +6,14 @@ include('../layouts/sidebar.php');
         <div class="main-content">
             <section class="section">
                 <div class="form-header">
-                    <h4>Student Info. Chat</h4>
+                    <h4>Year Work Plan</h4>
                 </div>
                
                 <div class="form-section">
                     <form method="post">
                         <div class="input-single-box">
                             <label>Date</label>
-                            <input type="date" name="date" class="form-control"  required>
+                            <input type="text" name="date" class="form-control datepicker"  required autocomplete="off">
                         </div>
                         <div class="input-single-box">
                             <label>Title</label>

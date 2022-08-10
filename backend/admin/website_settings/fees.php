@@ -21,8 +21,17 @@ include('../layouts/sidebar.php');
                         $title=$_POST['title'];
                         $update=$db->link->query("UPDATE `fees` SET `title`='$title' WHERE `id`='1'");
                         if($update)
-                        {
+                        {   
                             $file=$_FILES['image']['name'];
+                            if($file)
+                            {
+                                $path='../../asset/img/fees/'.$showdata['image'];
+                                if(file_exists($path))
+                                {
+                                    unlink($path);
+                                }
+                            }
+                            
                             if($file)
                             {
                                 $extension = pathinfo($file, PATHINFO_EXTENSION);
