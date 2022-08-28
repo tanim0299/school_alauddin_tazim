@@ -18,16 +18,38 @@ class database
 
   private function database()
   {
-    $this->link=new mysqli($this->hostadress,$this->username,$this->password,$this->database);
-    if($this->link)
+        $this->link=new mysqli($this->hostadress,$this->username,$this->password,$this->database);
+        if($this->link)
+        {
+          $this->message="Database Connection Successfulluy!!";
+        }
+        else
+        {
+          $this->message="Database Connection Unsuccessfull";
+        }
+  }
+
+  public function insert($table,$parameter=array())
+  {
+    $column = implode(',',array_keys($parameter));
+
+    $data = implode("','",$parameter);
+
+    $sql = "INSERT INTO $table($column) VALUES ('$data')";
+
+    $result = $this->link->query($sql);
+
+    if($result)
     {
-      $this->message="Database Connection Successfulluy!!";
+      echo "<div class='alert alert-success'>Data Insert Succesfully</div>";
     }
     else
     {
-      $this->message="Database Connection Unsuccessfull";
+      echo "<div class='alert alert-danger'>Data Insert Unsuccesfully</div>";
     }
+
   }
+
   function __destruct()
   {
     $this->link->close();

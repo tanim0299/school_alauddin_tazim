@@ -52,6 +52,8 @@
 
 <script src="../../assets/modules/izitoast/js/iziToast.min.js"></script>
 
+<script src="../../assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
+
 
 
 
