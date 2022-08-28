@@ -6,14 +6,23 @@ include('../layouts/sidebar.php');
         <div class="main-content">
             <section class="section">
                 <div class="form-header">
-                    <h4>Student Info. Chat</h4>
+                    <h4>Year Work Plan</h4>
                 </div>
-               
+                <?php 
+                if(isset($_POST['save']))
+                {
+                    $date = $_POST['date'];
+                    $title = $_POST['title'];
+
+                    $db->insert('yearly_work_plan',['date'=>$date,'title'=>$title]);
+
+                }
+                ?>
                 <div class="form-section">
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                         <div class="input-single-box">
                             <label>Date</label>
-                            <input type="date" name="date" class="form-control"  required>
+                            <input type="text" name="date" class="form-control datepicker"  required autocomplete="off">
                         </div>
                         <div class="input-single-box">
                             <label>Title</label>

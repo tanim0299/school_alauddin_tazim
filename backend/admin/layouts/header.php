@@ -71,6 +71,15 @@ if(!isset($_SESSION['email']))
         <div class="navbar-bg"></div>
         
         <!-- Start app top navbar -->
+        <?php 
+        $id = $_SESSION['admin_id'];
+        // echo $id;
+        $userdata = $db->link->query("SELECT * FROM `create_admin` WHERE `id`='$id'");
+        if($userdata)
+        {
+            $showuser = $userdata->fetch_assoc();
+            ?>
+            
         <nav class="navbar navbar-expand-lg main-navbar">
             <form class="form-inline mr-auto">
                 <ul class="navbar-nav mr-3">
@@ -85,8 +94,8 @@ if(!isset($_SESSION['email']))
             <ul class="navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                    <img alt="image" src="../../asset/img/admin_image/<?php echo $_SESSION['image']; ?>" class="rounded-circle mr-1">
-                    <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $_SESSION['username']; ?></div></a>
+                    <img alt="image" src="../../asset/img/admin_image/<?php echo $showuser['image']; ?>" class="rounded-circle mr-1">
+                    <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $showuser['username']; ?></div></a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="../logout.php" class="dropdown-item has-icon text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
@@ -94,7 +103,9 @@ if(!isset($_SESSION['email']))
             </ul>
         </nav>
 
-       
+       <?php
+        }
+        ?>
             
 
         

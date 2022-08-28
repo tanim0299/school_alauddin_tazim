@@ -9,8 +9,16 @@ include 'header.php';
 					<div class="left-body-boxtitle">
 						<b>ফিস তালিকা</b>
 					</div>
+					<?php
+					$sql=$db->link->query("SELECT * FROM `fees` WHERE `id`=1");
+					if($sql)
+					{
+						$showdata=$sql->fetch_assoc();
+					}
+					?>
 					<div class="body-text">
-						<p></p>
+						<p><?php echo $showdata['title']?></p>
+						<img src="../backend/asset/img/fees/<?php echo $showdata['image']; ?>">
 					</div>
 				</div>
 			</div>
