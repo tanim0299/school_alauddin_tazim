@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 08, 2022 at 01:57 PM
+-- Generation Time: Aug 30, 2022 at 07:04 AM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -59,7 +59,7 @@ CREATE TABLE `citizen_charter` (
 --
 
 INSERT INTO `citizen_charter` (`id`, `title`, `image`) VALUES
-(1, 'CR7', '534960289.png');
+(1, 'CR7', '2077803993.png');
 
 -- --------------------------------------------------------
 
@@ -86,7 +86,7 @@ CREATE TABLE `create_admin` (
 --
 
 INSERT INTO `create_admin` (`id`, `username`, `mail`, `phone`, `adress`, `type`, `password`, `confirm_password`, `image`, `admin_type`, `password_recover`) VALUES
-(1, 'SBIT', 'info@sbit.com.bd', '01840241895', 'FENI', 1, '202cb962ac59075b964b07152d234b70', '202cb962ac59075b964b07152d234b70', '1.png', 'developer', '123');
+(1, 'Tanim', 'info@sbit.com.bd', '01840241895', 'FENI', 1, '202cb962ac59075b964b07152d234b70', '202cb962ac59075b964b07152d234b70', '1.png', 'developer', '123');
 
 -- --------------------------------------------------------
 
@@ -125,7 +125,30 @@ CREATE TABLE `fees` (
 --
 
 INSERT INTO `fees` (`id`, `title`, `image`) VALUES
-(1, 'tiles', '1599658203.png');
+(1, 'cr7', '1596901303.jfif');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `founder_message`
+--
+
+CREATE TABLE `founder_message` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `create_at` timestamp NULL DEFAULT NULL,
+  `upload_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `founder_message`
+--
+
+INSERT INTO `founder_message` (`id`, `name`, `title`, `description`, `image`, `create_at`, `upload_at`) VALUES
+(1, 'Md. Abdul Mannan Sourov', 'Founder Message', 'à¦†à¦œà¦•à§‡à¦° à¦à¦‡ à¦¦à¦¿à¦¨à§‡ à¦¶à§à¦°à¦¦à§à¦§à¦¾à¦° à¦¸à¦¾à¦¥à§‡ à¦¸à§à¦®à¦°à¦£ à¦•à¦°à¦›à¦¿ à¦¯à¦¾à¦à¦° à¦¸à§à¦®à§ƒà¦¤à¦¿ à¦°à¦•à§à¦·à¦¾à¦°à§à¦¥à§‡ à¦ à¦®à¦¹à¦¾à¦¨ à¦¬à¦¿à¦¦à§à¦¯à¦¾à¦ªà§€à¦  à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¿à¦¤ à¦¸à§‡à¦‡ à¦®à¦°à¦¹à§à¦® à¦‡à¦•à¦¬à¦¾à¦² à¦¹à§‹à¦¸à§‡à¦¨ à¦•à§‡ à¥¤ à¦à¦•à§à¦¶ à¦¶à¦¤à¦•à§‡à¦° à¦šà§à¦¯à¦¾à¦²à§‡à¦žà§à¦œ à¦®à§‹à¦•à¦¾à¦¬à§‡à¦²à¦¾à¦° à¦²à¦•à§à¦·à§à¦¯à§‡ à¦‡à¦•à¦¬à¦¾à¦² à¦®à§‡à¦®à§‹à¦°à¦¿à¦¯à¦¼à¦¾à¦² à¦¸à¦°à¦•à¦¾à¦°à¦¿ à¦•à¦²à§‡à¦œ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾ à¦•à¦°à¦¾ à¦¹à¦¯à¦¼ à¥¤ à¦¦à¦¾à¦—à¦¨à¦­à§‚à¦à¦‡à§Ÿà¦¾ à¦‰à¦ªà¦œà§‡à¦²à¦¾à¦° à¦†à¦²à¦¾à¦‡à¦¯à¦¼à¦¾à¦°à¦ªà§à¦° à¦¨à¦¿à¦¬à¦¾à¦¸à§€ à¦¬à¦¿à¦¶à¦¿à¦·à§à¦Ÿ à¦¦à¦¾à¦¨à¦¬à§€à¦°, à¦¶à¦¿à¦•à§à¦·à¦¾à¦¨à§à¦°à¦¾à¦—à§€ à¦¸à¦«à¦² à¦¬à§à¦¯à¦¬à¦¸à¦¾à¦¯à¦¼à§€, à¦à¦«.à¦¬à¦¿.à¦¸à¦¿.à¦†à¦‡-à¦à¦° à¦¸à¦¾à¦¬à§‡à¦• à¦¸à¦­à¦¾à¦ªà¦¤à¦¿, à¦œà¦¾à¦¤à§€à¦¯à¦¼ à¦“ à¦†à¦¨à§à¦¤à¦°à§à¦œà¦¾à¦¤à¦¿à¦• à¦…à¦™à§à¦—à¦¨à§‡ à¦…à¦¤à§à¦¯à¦¨à§à¦¤ à¦¸à§à¦ªà¦°à¦¿à¦šà¦¿à¦¤ à¦œà¦¨à¦¾à¦¬ à¦†à¦²à¦¹à¦¾à¦œà§à¦¬ à¦†à¦¬à¦¦à§à¦² à¦†à¦‰à¦¯à¦¼à¦¾à¦² à¦®à¦¿à¦¨à§à¦Ÿà§ à¦¸à¦¾à¦¹à§‡à¦¬à§‡à¦° à¦à¦•à¦• à¦…à¦°à§à¦¥à¦¾à¦¯à¦¼à¦¨à§‡ à§§à§¯à§®à§« à¦¸à¦¾à¦²à§‡ à¦ à¦•à¦²à§‡à¦œà¦Ÿà¦¿ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾ à¦²à¦¾à¦­ à¦•à¦°à§‡à¥¤ à¦¤à¦¾à¦à¦°à¦‡ à¦ªà¦¿à¦¤à¦¾ à¦¦à¦¾à¦—à¦¨à¦­à§‚à¦à¦‡à¦¯à¦¼à¦¾ à¦‰à¦ªà¦œà§‡à¦²à¦¾à¦° à¦ªà§à¦°à¦¥à¦® à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¿à¦¤ à¦šà§‡à¦¯à¦¼à¦¾à¦°à¦®à§à¦¯à¦¾à¦¨ à¦†à¦²à¦¹à¦¾à¦œà§à¦¬ à¦¸à¦¾à¦«à¦¿à¦‰à¦²à§à¦²à¦¾à¦¹ à¦“ à¦¤à¦¾à¦à¦° à¦šà¦¾à¦šà¦¾ à¦œà¦¨à¦¾à¦¬ à¦†à¦²à¦¹à¦¾à¦œà§à¦¬ à¦¹à¦¾à¦¬à¦¿à¦¬ à¦‰à¦²à§à¦²à¦¾à¦¹ à¦¸à¦¾à¦¹à§‡à¦¬ à¦ à¦•à¦²à§‡à¦œ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦° à¦ªà§‡à¦›à¦¨à§‡ à¦¯à¦¥à§‡à¦·à§à¦Ÿ à¦…à¦¬à¦¦à¦¾à¦¨ à¦°à§‡à¦–à§‡à¦›à§‡à¦¨à¥¤ à¦®à¦¾à¦¤à§à¦° à§§à§ªà§® à¦œà¦¨ à¦›à¦¾à¦¤à§à¦°à¦›à¦¾à¦¤à§à¦°à§€ à¦¨à¦¿à¦¯à¦¼à§‡ à¦ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à¦Ÿà¦¿à¦° à¦¯à¦¾à¦¤à§à¦°à¦¾ à¦¶à§à¦°à§ à¦¹à¦¯à¦¼à¥¤ à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨à§‡ à¦ªà§à¦°à¦¾à¦¯à¦¼ à¦šà¦¾à¦° à¦¹à¦¾à¦œà¦¾à¦° à¦›à¦¾à¦¤à§à¦°à¦›à¦¾à¦¤à§à¦°à§€ à¦ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à§‡ à¦…à¦§à§à¦¯à¦¯à¦¼à¦¨ à¦•à¦°à¦›à§‡à¥¤ à¦¦à§‡à¦¶à¦¿-à¦¬à¦¿à¦¦à§‡à¦¶à¦¿ à¦®à§‚à¦²à§à¦¯à¦¬à¦¾à¦¨ à¦—à§à¦°à¦¨à§à¦¥à¦¸à¦¹ à¦ªà§à¦°à¦¾à¦¯à¦¼ à¦¦à¦¶ à¦¹à¦¾à¦œà¦¾à¦° à¦¬à¦‡ à¦¸à¦‚à¦¬à¦²à¦¿à¦¤ à¦à¦•à¦Ÿà¦¿ à¦¸à§à¦¬à¦¿à¦¶à¦¾à¦² à¦²à¦¾à¦‡à¦¬à§à¦°à§‡à¦°à¦¿ à¦†à¦›à§‡à¥¤ à¦¯à§‡à¦–à¦¾à¦¨à§‡ à¦à¦•à¦¸à¦¾à¦¥à§‡ à§§à§¦à§¦ à¦œà¦¨ à¦¶à¦¿à¦•à§à¦·à¦¾à¦°à§à¦¥à§€ à¦¬à¦¸à§‡ à¦…à¦§à§à¦¯à¦¯à¦¼à¦¨ à¦•à¦°à¦¤à§‡ à¦ªà¦¾à¦°à§‡à¥¤ à§©à§« à¦œà¦¨ à¦¸à§à¦ªà§à¦°à¦¶à¦¿à¦•à§à¦·à¦¿à¦¤ à¦¶à¦¿à¦•à§à¦·à¦•, à§¨à§¦ à¦œà¦¨ à§©à¦¯à¦¼ à¦“ à§ªà¦°à§à¦¥ à¦¶à§à¦°à§‡à¦£à¦¿à¦° à¦¦à¦•à§à¦· à¦•à¦°à§à¦®à¦šà¦¾à¦°à§€ à¦à¦¬à¦‚ à¦†à¦§à§à¦¨à¦¿à¦• à¦¤à¦¥à§à¦¯ à¦ªà§à¦°à¦¯à§à¦•à§à¦¤à¦¿à¦° à¦®à¦¾à¦§à§à¦¯à¦®à§‡ à¦¯à§à¦—à§‹à¦ªà¦¯à§‹à¦—à§€ à¦“ à¦‰à¦¨à§à¦¨à¦¤ à¦®à¦¾à¦¨à§‡à¦° à¦‰à¦šà§à¦š à¦¶à¦¿à¦•à§à¦·à¦¾ à¦¬à¦¿à¦¸à§à¦¤à¦¾à¦°à§‡à¦° à¦¦à¦¾à¦¯à¦¼à¦¿à¦¤à§à¦¬ à¦ªà¦¾à¦²à¦¨ à¦•à¦°à¦›à§‡ à¦ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à¥¤ à¦¸à¦®à¦¾à¦œà§‡à¦° à¦¬à§à¦¯à¦¾à¦§à¦¿à¦°à§‚à¦ªà§‡ à¦¬à¦¿à¦¬à§‡à¦šà¦¿à¦¤ à¦¸à¦¨à§à¦¤à§à¦°à¦¾à¦¸, à¦®à¦¾à¦¦à¦•, à¦‡à¦­à¦Ÿà¦¿à¦œà¦¿à¦‚ à¦“ à¦¨à¦•à¦² à¦ªà§à¦°à¦¬à¦£à¦¤à¦¾à¦®à§à¦•à§à¦¤ à¦¶à¦¿à¦•à§à¦·à¦¾à¦™à§à¦—à¦¨ à¦¹à¦¿à¦¸à§‡à¦¬à§‡ à¦ à¦•à¦²à§‡à¦œà§‡ à¦ˆà¦°à§à¦·à¦£à§€à¦¯à¦¼ à¦¦à§ƒà¦·à§à¦Ÿà¦¾à¦¨à§à¦¤ à¦¸à§à¦¥à¦¾à¦ªà¦¨à§‡ à¦†à¦®à¦¿ à¦¤à§ƒà¦ªà§à¦¤à¥¤ à¦•à¦°à§à¦¤à§ƒà¦ªà¦•à§à¦·, à¦ªà§à¦°à¦¶à¦¾à¦¸à¦¨, à¦¶à¦¿à¦•à§à¦·à¦•-à¦…à¦­à¦¿à¦­à¦¾à¦¬à¦•, à¦¶à¦¿à¦•à§à¦·à¦¾à¦°à§à¦¥à§€, à¦•à¦°à§à¦®à¦šà¦¾à¦°à§€à¦¸à¦¹ à¦¸à¦‚à¦¶à§à¦²à¦¿à¦·à§à¦Ÿ à¦¸à¦•à¦²à§‡à¦° à¦¸à¦™à§à¦—à§‡ à¦°à¦¯à¦¼à§‡à¦›à§‡ à¦®à¦§à§à¦° à¦“ à¦ªà¦¾à¦°à¦¿à¦¬à¦¾à¦°à¦¿à¦• à¦¸à¦®à§à¦ªà¦°à§à¦•à¥¤ à¦à¦° à¦•à§à¦°à¦®à§‹à¦¨à§à¦¨à¦¤à¦¿à¦¤à§‡ à¦¨à¦¿à¦œà§‡à¦•à§‡ à¦œà¦¡à¦¼à¦¿à¦¤ à¦°à¦¾à¦–à¦¤à§‡ à¦ªà§‡à¦°à§‡ à¦—à¦°à§à¦¬à¦¬à§‹à¦§ à¦•à¦°à¦›à¦¿à¥¤ à¦à¦•à§à¦¶ à¦¶à¦¤à¦•à§‡à¦° à¦¯à§‹à¦—à§à¦¯ à¦¨à¦¾à¦—à¦°à¦¿à¦• à¦¤à§ˆà¦°à¦¿à¦¤à§‡ à¦‡à¦•à¦¬à¦¾à¦² à¦®à§‡à¦®à§‹à¦°à¦¿à¦¯à¦¼à¦¾à¦² à¦¸à¦°à¦•à¦¾à¦°à¦¿ à¦•à¦²à§‡à¦œ à¦¯à¦¥à¦¾à¦¯à¦¥ à¦­à§‚à¦®à¦¿à¦•à¦¾ à¦ªà¦¾à¦²à¦¨à§‡ à¦¸à¦•à§à¦·à¦® à¦¹à§‹à¦•, à¦®à¦¹à¦¾à¦¨ à¦†à¦²à§à¦²à¦¾à¦¹à¦° à¦•à¦¾à¦›à§‡ à¦à¦‡ à¦ªà§à¦°à¦¾à¦°à§à¦¥à¦¨à¦¾à¥¤ ( à¦®à§‹à¦ƒ à¦†à¦¬à§à¦² à¦•à¦¾à¦²à¦¾à¦® ) à¦‰à¦ªà¦¾à¦§à§à¦¯à¦•à§à¦· à¦“ à¦­à¦¾à¦°à¦ªà§à¦°à¦¾à¦ªà§à¦¤ à¦…à¦§à§à¦¯à¦•à§à¦· à¦‡à¦•à¦¬à¦¾à¦² à¦®à§‡à¦®à§‹à¦°à¦¿à¦¯à¦¼à¦¾à¦² à¦¸à¦°à¦•à¦¾à¦°à¦¿ à¦•à¦²à§‡à¦œ à¦¦à¦¾à¦—à¦¨à¦­à§‚à¦à¦‡à§Ÿà¦¾, à¦«à§‡à¦¨à§€à¥¤', '471348322.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -187,7 +210,8 @@ CREATE TABLE `main_menu` (
 
 INSERT INTO `main_menu` (`id`, `sl`, `main_menu_name`, `icon`, `status`) VALUES
 (9, 1, 'Admin Information', 'fa fa-user', 1),
-(15, 2, 'Website Settings', 'fa fa-gears', 1);
+(15, 2, 'Website Settings', 'fa fa-gears', 1),
+(17, 3, 'Adminstraation', 'fa-solid fa-circle-info', 1);
 
 -- --------------------------------------------------------
 
@@ -212,6 +236,29 @@ INSERT INTO `mission_vision` (`id`, `description`, `create_at`, `upload_at`) VAL
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `principal_message`
+--
+
+CREATE TABLE `principal_message` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `create_at` timestamp NULL DEFAULT NULL,
+  `upload_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `principal_message`
+--
+
+INSERT INTO `principal_message` (`id`, `name`, `title`, `description`, `image`, `create_at`, `upload_at`) VALUES
+(1, 'Asadur Rahman Tareq', 'Principla Message', '<div>à¦†à¦œà¦•à§‡à¦° à¦à¦‡ à¦¦à¦¿à¦¨à§‡ à¦¶à§à¦°à¦¦à§à¦§à¦¾à¦° à¦¸à¦¾à¦¥à§‡ à¦¸à§à¦®à¦°à¦£ à¦•à¦°à¦›à¦¿ à¦¯à¦¾à¦à¦° à¦¸à§à¦®à§ƒà¦¤à¦¿ à¦°à¦•à§à¦·à¦¾à¦°à§à¦¥à§‡ à¦ à¦®à¦¹à¦¾à¦¨ à¦¬à¦¿à¦¦à§à¦¯à¦¾à¦ªà§€à¦  à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¿à¦¤ à¦¸à§‡à¦‡ à¦®à¦°à¦¹à§à¦® à¦‡à¦•à¦¬à¦¾à¦² à¦¹à§‹à¦¸à§‡à¦¨ à¦•à§‡ à¥¤ à¦à¦•à§à¦¶ à¦¶à¦¤à¦•à§‡à¦° à¦šà§à¦¯à¦¾à¦²à§‡à¦žà§à¦œ à¦®à§‹à¦•à¦¾à¦¬à§‡à¦²à¦¾à¦° à¦²à¦•à§à¦·à§à¦¯à§‡ à¦‡à¦•à¦¬à¦¾à¦² à¦®à§‡à¦®à§‹à¦°à¦¿à¦¯à¦¼à¦¾à¦² à¦¸à¦°à¦•à¦¾à¦°à¦¿ à¦•à¦²à§‡à¦œ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾ à¦•à¦°à¦¾ à¦¹à¦¯à¦¼ à¥¤ à¦¦à¦¾à¦—à¦¨à¦­à§‚à¦à¦‡à§Ÿà¦¾ à¦‰à¦ªà¦œà§‡à¦²à¦¾à¦° à¦†à¦²à¦¾à¦‡à¦¯à¦¼à¦¾à¦°à¦ªà§à¦° à¦¨à¦¿à¦¬à¦¾à¦¸à§€ à¦¬à¦¿à¦¶à¦¿à¦·à§à¦Ÿ à¦¦à¦¾à¦¨à¦¬à§€à¦°, à¦¶à¦¿à¦•à§à¦·à¦¾à¦¨à§à¦°à¦¾à¦—à§€ à¦¸à¦«à¦² à¦¬à§à¦¯à¦¬à¦¸à¦¾à¦¯à¦¼à§€, à¦à¦«.à¦¬à¦¿.à¦¸à¦¿.à¦†à¦‡-à¦à¦° à¦¸à¦¾à¦¬à§‡à¦• à¦¸à¦­à¦¾à¦ªà¦¤à¦¿, à¦œà¦¾à¦¤à§€à¦¯à¦¼ à¦“ à¦†à¦¨à§à¦¤à¦°à§à¦œà¦¾à¦¤à¦¿à¦• à¦…à¦™à§à¦—à¦¨à§‡ à¦…à¦¤à§à¦¯à¦¨à§à¦¤ à¦¸à§à¦ªà¦°à¦¿à¦šà¦¿à¦¤ à¦œà¦¨à¦¾à¦¬ à¦†à¦²à¦¹à¦¾à¦œà§à¦¬ à¦†à¦¬à¦¦à§à¦² à¦†à¦‰à¦¯à¦¼à¦¾à¦² à¦®à¦¿à¦¨à§à¦Ÿà§ à¦¸à¦¾à¦¹à§‡à¦¬à§‡à¦° à¦à¦•à¦• à¦…à¦°à§à¦¥à¦¾à¦¯à¦¼à¦¨à§‡ à§§à§¯à§®à§« à¦¸à¦¾à¦²à§‡ à¦ à¦•à¦²à§‡à¦œà¦Ÿà¦¿ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾ à¦²à¦¾à¦­ à¦•à¦°à§‡à¥¤ à¦¤à¦¾à¦à¦°à¦‡ à¦ªà¦¿à¦¤à¦¾ à¦¦à¦¾à¦—à¦¨à¦­à§‚à¦à¦‡à¦¯à¦¼à¦¾ à¦‰à¦ªà¦œà§‡à¦²à¦¾à¦° à¦ªà§à¦°à¦¥à¦® à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¿à¦¤ à¦šà§‡à¦¯à¦¼à¦¾à¦°à¦®à§à¦¯à¦¾à¦¨ à¦†à¦²à¦¹à¦¾à¦œà§à¦¬ à¦¸à¦¾à¦«à¦¿à¦‰à¦²à§à¦²à¦¾à¦¹ à¦“ à¦¤à¦¾à¦à¦° à¦šà¦¾à¦šà¦¾ à¦œà¦¨à¦¾à¦¬ à¦†à¦²à¦¹à¦¾à¦œà§à¦¬ à¦¹à¦¾à¦¬à¦¿à¦¬ à¦‰à¦²à§à¦²à¦¾à¦¹ à¦¸à¦¾à¦¹à§‡à¦¬ à¦ à¦•à¦²à§‡à¦œ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦° à¦ªà§‡à¦›à¦¨à§‡ à¦¯à¦¥à§‡à¦·à§à¦Ÿ à¦…à¦¬à¦¦à¦¾à¦¨ à¦°à§‡à¦–à§‡à¦›à§‡à¦¨à¥¤ à¦®à¦¾à¦¤à§à¦° à§§à§ªà§® à¦œà¦¨ à¦›à¦¾à¦¤à§à¦°à¦›à¦¾à¦¤à§à¦°à§€ à¦¨à¦¿à¦¯à¦¼à§‡ à¦ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à¦Ÿà¦¿à¦° à¦¯à¦¾à¦¤à§à¦°à¦¾ à¦¶à§à¦°à§ à¦¹à¦¯à¦¼à¥¤ à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨à§‡ à¦ªà§à¦°à¦¾à¦¯à¦¼ à¦šà¦¾à¦° à¦¹à¦¾à¦œà¦¾à¦° à¦›à¦¾à¦¤à§à¦°à¦›à¦¾à¦¤à§à¦°à§€ à¦ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à§‡ à¦…à¦§à§à¦¯à¦¯à¦¼à¦¨ à¦•à¦°à¦›à§‡à¥¤ à¦¦à§‡à¦¶à¦¿-à¦¬à¦¿à¦¦à§‡à¦¶à¦¿ à¦®à§‚à¦²à§à¦¯à¦¬à¦¾à¦¨ à¦—à§à¦°à¦¨à§à¦¥à¦¸à¦¹ à¦ªà§à¦°à¦¾à¦¯à¦¼ à¦¦à¦¶ à¦¹à¦¾à¦œà¦¾à¦° à¦¬à¦‡ à¦¸à¦‚à¦¬à¦²à¦¿à¦¤ à¦à¦•à¦Ÿà¦¿ à¦¸à§à¦¬à¦¿à¦¶à¦¾à¦² à¦²à¦¾à¦‡à¦¬à§à¦°à§‡à¦°à¦¿ à¦†à¦›à§‡à¥¤ à¦¯à§‡à¦–à¦¾à¦¨à§‡ à¦à¦•à¦¸à¦¾à¦¥à§‡ à§§à§¦à§¦ à¦œà¦¨ à¦¶à¦¿à¦•à§à¦·à¦¾à¦°à§à¦¥à§€ à¦¬à¦¸à§‡ à¦…à¦§à§à¦¯à¦¯à¦¼à¦¨ à¦•à¦°à¦¤à§‡ à¦ªà¦¾à¦°à§‡à¥¤ à§©à§« à¦œà¦¨ à¦¸à§à¦ªà§à¦°à¦¶à¦¿à¦•à§à¦·à¦¿à¦¤ à¦¶à¦¿à¦•à§à¦·à¦•, à§¨à§¦ à¦œà¦¨ à§©à¦¯à¦¼ à¦“ à§ªà¦°à§à¦¥ à¦¶à§à¦°à§‡à¦£à¦¿à¦° à¦¦à¦•à§à¦· à¦•à¦°à§à¦®à¦šà¦¾à¦°à§€ à¦à¦¬à¦‚ à¦†à¦§à§à¦¨à¦¿à¦• à¦¤à¦¥à§à¦¯ à¦ªà§à¦°à¦¯à§à¦•à§à¦¤à¦¿à¦° à¦®à¦¾à¦§à§à¦¯à¦®à§‡ à¦¯à§à¦—à§‹à¦ªà¦¯à§‹à¦—à§€ à¦“ à¦‰à¦¨à§à¦¨à¦¤ à¦®à¦¾à¦¨à§‡à¦° à¦‰à¦šà§à¦š à¦¶à¦¿à¦•à§à¦·à¦¾ à¦¬à¦¿à¦¸à§à¦¤à¦¾à¦°à§‡à¦° à¦¦à¦¾à¦¯à¦¼à¦¿à¦¤à§à¦¬ à¦ªà¦¾à¦²à¦¨ à¦•à¦°à¦›à§‡ à¦ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à¥¤ à¦¸à¦®à¦¾à¦œà§‡à¦° à¦¬à§à¦¯à¦¾à¦§à¦¿à¦°à§‚à¦ªà§‡ à¦¬à¦¿à¦¬à§‡à¦šà¦¿à¦¤ à¦¸à¦¨à§à¦¤à§à¦°à¦¾à¦¸, à¦®à¦¾à¦¦à¦•, à¦‡à¦­à¦Ÿà¦¿à¦œà¦¿à¦‚ à¦“ à¦¨à¦•à¦² à¦ªà§à¦°à¦¬à¦£à¦¤à¦¾à¦®à§à¦•à§à¦¤ à¦¶à¦¿à¦•à§à¦·à¦¾à¦™à§à¦—à¦¨ à¦¹à¦¿à¦¸à§‡à¦¬à§‡ à¦ à¦•à¦²à§‡à¦œà§‡ à¦ˆà¦°à§à¦·à¦£à§€à¦¯à¦¼ à¦¦à§ƒà¦·à§à¦Ÿà¦¾à¦¨à§à¦¤ à¦¸à§à¦¥à¦¾à¦ªà¦¨à§‡ à¦†à¦®à¦¿ à¦¤à§ƒà¦ªà§à¦¤à¥¤ à¦•à¦°à§à¦¤à§ƒà¦ªà¦•à§à¦·, à¦ªà§à¦°à¦¶à¦¾à¦¸à¦¨, à¦¶à¦¿à¦•à§à¦·à¦•-à¦…à¦­à¦¿à¦­à¦¾à¦¬à¦•, à¦¶à¦¿à¦•à§à¦·à¦¾à¦°à§à¦¥à§€, à¦•à¦°à§à¦®à¦šà¦¾à¦°à§€à¦¸à¦¹ à¦¸à¦‚à¦¶à§à¦²à¦¿à¦·à§à¦Ÿ à¦¸à¦•à¦²à§‡à¦° à¦¸à¦™à§à¦—à§‡ à¦°à¦¯à¦¼à§‡à¦›à§‡ à¦®à¦§à§à¦° à¦“ à¦ªà¦¾à¦°à¦¿à¦¬à¦¾à¦°à¦¿à¦• à¦¸à¦®à§à¦ªà¦°à§à¦•à¥¤ à¦à¦° à¦•à§à¦°à¦®à§‹à¦¨à§à¦¨à¦¤à¦¿à¦¤à§‡ à¦¨à¦¿à¦œà§‡à¦•à§‡ à¦œà¦¡à¦¼à¦¿à¦¤ à¦°à¦¾à¦–à¦¤à§‡ à¦ªà§‡à¦°à§‡ à¦—à¦°à§à¦¬à¦¬à§‹à¦§ à¦•à¦°à¦›à¦¿à¥¤ à¦à¦•à§à¦¶ à¦¶à¦¤à¦•à§‡à¦° à¦¯à§‹à¦—à§à¦¯ à¦¨à¦¾à¦—à¦°à¦¿à¦• à¦¤à§ˆà¦°à¦¿à¦¤à§‡ à¦‡à¦•à¦¬à¦¾à¦² à¦®à§‡à¦®à§‹à¦°à¦¿à¦¯à¦¼à¦¾à¦² à¦¸à¦°à¦•à¦¾à¦°à¦¿ à¦•à¦²à§‡à¦œ à¦¯à¦¥à¦¾à¦¯à¦¥ à¦­à§‚à¦®à¦¿à¦•à¦¾ à¦ªà¦¾à¦²à¦¨à§‡ à¦¸à¦•à§à¦·à¦® à¦¹à§‹à¦•, à¦®à¦¹à¦¾à¦¨ à¦†à¦²à§à¦²à¦¾à¦¹à¦° à¦•à¦¾à¦›à§‡ à¦à¦‡ à¦ªà§à¦°à¦¾à¦°à§à¦¥à¦¨à¦¾à¥¤ ( à¦®à§‹à¦ƒ à¦†à¦¬à§à¦² à¦•à¦¾à¦²à¦¾à¦«à§‡à¦¨à§€ à¦œà§‡à¦²à¦¾à¦° à¦¦à¦¾à¦—à¦¨à¦­à§‚à¦žà¦¾ à¦‰à¦ªà¦œà§‡à¦²à¦¾à¦° à¦¸à§à¦¬à¦¨à¦¾à¦®à¦§à¦¨à§à¦¯ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨ à¦‡à¦•à¦¬à¦¾à¦² à¦®à§‡à¦®à§‹à¦°à¦¿à§Ÿà¦¾à¦² à¦¸à¦°à¦•à¦¾à¦°à¦¿ à¦•à¦²à§‡à¦œà¥¤ à¦à¦‡ à¦à¦²à¦¾à¦•à¦¾à¦° à¦®à¦¾à¦¨à§à¦·à§‡à¦° à¦‰à¦šà§à¦š à¦¶à¦¿à¦•à§à¦·à¦¾à¦° à¦¸à§à¦¬à§à¦¯à¦¬à¦¸à§à¦¥à¦¾ à¦•à¦°à¦¾à¦°&nbsp; à¦®à¦¾à¦¨à¦¸à§‡ à¦à¦‡ à¦à¦²à¦¾à¦•à¦¾à¦°à¦‡ à¦•à§ƒà¦¤à¦¿ à¦¸à¦¨à§à¦¤à¦¾à¦¨&nbsp; à¦¬à¦¿à¦¶à¦¿à¦·à§à¦Ÿ&nbsp; à¦¬à§à¦¯à¦¬à¦¸à¦¾à§Ÿà§€ à¦“ à¦¶à¦¿à¦•à§à¦·à¦¾à¦¨à§à¦°à¦¾à¦—à§€ à¦†à¦¬à¦¦à§à¦² à¦†à¦‰à§Ÿà¦¾à¦² à¦®à¦¿à¦¨à§à¦Ÿà§ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾ à¦•à¦°à§‡à¦¨ à¦‡à¦•à¦¬à¦¾à¦² à¦®à§‡à¦®à§‹à¦°à¦¿à§Ÿà¦¾à¦² à¦•à¦²à§‡à¦œà¥¤ à¦¤à¦¾à¦à¦° à¦¸à§à¦¨à§‡à¦¹à¦­à¦¾à¦œà¦¨ à¦›à§‹à¦Ÿ à¦­à¦¾à¦‡ à¦‡à¦•à¦¬à¦¾à¦² à¦¹à§‹à¦¸à§‡à¦¨ à¦¦à§à¦°à¦¾à¦°à§‹à¦—à§à¦¯ à¦•à§à¦¯à¦¾à¦¨à§à¦¸à¦¾à¦°à§‡ à¦†à¦•à§à¦°à¦¾à¦¨à§à¦¤ à¦¹à§Ÿà§‡ à¦¸à§à¦•à§à¦² à¦œà§€à¦¬à¦¨à§‡à¦° à¦—à¦¨à§à¦¡à¦¿ à¦ªà¦¾à¦° à¦¹à¦“à§Ÿà¦¾à¦° à¦ªà§‚à¦°à§à¦¬à§‡à¦‡ à¦®à§ƒà¦¤à§à¦¯à§ à¦¬à¦°à¦£ à¦•à¦°à§‡à¦¨à¥¤ à¦¤à¦¾à¦° à¦¸à§à¦®à§ƒà¦¤à¦¿à¦•à§‡ à¦…à¦®à¦²à¦¿à¦¨ à¦•à¦°à§‡ à¦°à¦¾à¦–à¦¾à¦° à¦œà¦¨à§à¦¯ à¦¤à¦¿à¦¨à¦¿ à¦à¦‡ à¦•à¦²à§‡à¦œ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾ à¦•à¦°à§‡à¦¨à¥¤ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦²à¦—à§à¦¨ à¦¥à§‡à¦•à§‡à¦‡ à¦à¦‡ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à§‡à¦° à¦²à¦•à§à¦·à§à¦¯ à¦›à¦¿à¦²à§‹ à¦¶à¦¿à¦•à§à¦·à¦¾à¦° à¦†à¦²à§‹ à¦›à§œà¦¿à§Ÿà§‡ à¦¦à§‡à¦“à§Ÿà¦¾ à¦à¦¬à¦‚ à¦à¦‡ à¦•à¦¾à¦œà¦Ÿà¦¿ à¦¸à¦ à¦¿à¦• à¦­à¦¾à¦¬à§‡à¦‡ à¦ªà¦¾à¦²à¦¨ à¦•à¦°à§‡ à¦¯à¦¾à¦šà§à¦›à§‡ à¦à¦‡ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à¥¤ à¦†à¦®à¦¿ à¦à¦‡ à¦•à¦²à§‡à¦œà§‡ à¦ªà§à¦°à¦­à¦¾à¦·à¦• à¦ªà¦¦à§‡ à¦¯à§‹à¦—à¦¦à¦¾à¦¨ à¦•à¦°à¦¿ à¦—à¦¤ à§¦à§©/à§¦à§ª/à§§à§¯à§¯à§© à¦–à§à¦°à¦¿:à¥¤ à¦¤à¦–à¦¨ à¦¥à§‡à¦•à§‡à¦‡ à¦•à¦²à§‡à¦œà§‡à¦° à¦‰à¦¤à§à¦¥à¦¾à¦¨à§‡à¦° à¦¸à¦¾à¦¥à§‡ à¦“à¦¤à§‹à¦ªà§à¦°à§‹à¦¤à¦­à¦¾à¦¬à§‡ à¦œà§œà¦¿à¦¤ à¦¹à¦‡à¥¤ à¦ªà¦°à¦¬à¦°à§à¦¤à§€à¦¤à§‡ 01/07/2013 à¦–à§à¦°à¦¿: à¦¸à¦¹à¦•à¦¾à¦°à§€ à¦…à¦§à§à¦¯à¦¾à¦ªà¦•à§‡à¦° à¦ªà¦¦à¦®à¦°à§à¦¯à¦¾à¦¦à¦¾ à¦²à¦¾à¦­ à¦•à¦°à¦¿à¥¤ à¦¤à¦¾à¦°à¦ªà¦° à§©à§¦/à§§à§¨/à§¨à§¦à§¨à§§ à¦–à§à¦°à¦¿: à¦…à¦§à§à¦¯à¦•à§à¦· à¦ªà¦¦à§‡à¦° à¦¦à¦¾à§Ÿà¦¿à¦¤à§à¦¬à¦­à¦¾à¦° à¦—à§à¦°à¦¹à¦£ à¦•à¦°à¦¿à¥¤</div><div><br></div><div>à¦—à¦£à¦ªà§à¦°à¦œà¦¾à¦¤à¦¨à§à¦¤à§à¦°à§€ à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¸à¦°à¦•à¦¾à¦°à§‡à¦° à¦®à¦¾à¦¨à¦¨à§€à§Ÿ à¦ªà§à¦°à¦§à¦¾à¦¨à¦®à¦¨à§à¦¤à§à¦°à§€ à¦œà¦¨à¦¨à§‡à¦¤à§à¦°à§€ à¦¶à§‡à¦– à¦¹à¦¾à¦¸à¦¿à¦¨à¦¾à¦° à¦à¦•à¦¾à¦¨à§à¦¤à¦¿à¦• à¦‡à¦šà§à¦›à¦¾ à¦“&nbsp; à¦¸à¦¿à¦¦à§à¦§à¦¾à¦¨à§à¦¤ à¦…à¦¨à§à¦¯à¦¾à§Ÿà§€ à¦—à¦¤ à§¦à§®/à§¦à§®/à§¨à§¦à§§à§® à¦–à§à¦°à¦¿; à¦¤à¦¾à¦°à¦¿à¦–à§‡ à¦à¦‡ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à¦Ÿà¦¿ à¦œà¦¾à¦¤à§€à§Ÿà¦•à¦°à¦£ à¦•à¦°à¦¾ à¦¹à§Ÿà¥¤ à¦à¦Ÿà¦¿ à¦à¦–à¦¨ à¦à¦•à¦Ÿà¦¿ à¦ªà§‚à¦°à§à¦£à¦¾à¦™à§à¦— à¦¸à¦°à¦•à¦¾à¦°à¦¿ à¦•à¦²à§‡à¦œà¥¤ à¦à¦‡ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à§‡ à¦à¦–à¦¨ à¦à¦•à¦¾à¦¦à¦¶ à¦“ à¦¦à§à¦¬à¦¾à¦¦à¦¶ à¦¶à§à¦°à§‡à¦£à¦¿à¦°&nbsp; à¦¬à¦¿à¦œà§à¦žà¦¾à¦¨, à¦®à¦¾à¦¨à¦¬à¦¿à¦• à¦“ à¦¬à§à¦¯à¦¬à¦¸à¦¾à§Ÿ à¦¶à¦¿à¦•à§à¦·à¦¾ à¦à¦¬à¦‚ à¦¬à§à¦¯à¦¬à¦¸à¦¾à§Ÿ à¦¬à§à¦¯à¦¬à¦¸à§à¦¥à¦¾à¦ªà¦¨à¦¾ à¦“ à¦ªà§à¦°à¦¯à§à¦•à§à¦¤à¦¿ (à¦¬à¦¿,à¦à¦®,à¦Ÿà¦¿) à¦¶à¦¾à¦–à¦¾ à¦šà¦¾à¦²à§ à¦°à§Ÿà§‡à¦›à§‡à¥¤ à¦à¦›à¦¾à§œà¦¾ à¦¸à§à¦¨à¦¾à¦¤à¦• (à¦ªà¦¾à¦¸) à¦¬à¦¿.à¦/ à¦¬à¦¿.à¦à¦¸.à¦à¦¸/ à¦¬à¦¿.à¦¬à¦¿.à¦à¦¸ à¦à¦¬à¦‚ à¦¹à¦¿à¦¸à¦¾à¦¬à¦¬à¦¿à¦œà§à¦žà¦¾à¦¨ à¦“ à¦¬à§à¦¯à¦¬à¦¸à§à¦¥à¦¾à¦ªà¦¨à¦¾ à¦¬à¦¿à¦·à§Ÿà§‡à¦°&nbsp; à¦¸à§à¦¨à¦¾à¦¤à¦• (à¦¸à¦®à§à¦®à¦¾à¦¨)&nbsp; à¦•à§‹à¦°à§à¦¸ à¦šà¦¾à¦²à§ à¦°à§Ÿà§‡à¦›à§‡à¥¤ à¦à¦‡ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à§‡ à¦ªà§à¦°à¦¤à¦¿à¦Ÿà¦¿ à¦¶à¦¿à¦•à§à¦·à¦¾à¦°à§à¦¥à§€ à¦¸à¦ à¦¿à¦• à¦¬à¦¿à¦¦à§à¦¯à¦¾ à¦…à¦°à§à¦œà¦¨ à¦•à¦°à¦¬à§‡ à¦“ à¦‰à¦¨à§à¦¨à¦¤ à¦¨à§ˆà¦¤à¦¿à¦•à¦¤à¦¾ à¦“ à¦®à§‚à¦²à§à¦¯à¦¬à§‹à¦§ à¦—à¦ à¦¨ à¦•à¦°à§‡ à¦œà¦¾à¦¤à¦¿à¦° à¦œà¦¨à¦• à¦¬à¦™à§à¦—à¦¬à¦¨à§à¦§à§ à¦¶à§‡à¦– à¦®à§à¦œà¦¿à¦¬à§à¦° à¦°à¦¹à¦®à¦¾à¦¨à§‡à¦° à¦¸à§‹à¦¨à¦¾à¦° à¦¬à¦¾à¦‚à¦²à¦¾ à¦—à§œà¦¾à¦° à¦²à¦•à§à¦·à§à¦¯à§‡ à¦¨à¦¿à¦œà§‡à¦•à§‡ à¦¨à¦¿à§Ÿà§‹à¦œà¦¿à¦¤ à¦•à¦°à¦¾à¦° à¦œà¦¨à§à¦¯à§‡ à¦ªà§à¦°à¦¸à§à¦¤à§à¦¤ à¦¹à¦¬à§‡ -à¦à¦‡ à¦²à¦•à§à¦·à§à¦¯à§‡ à¦à¦‡ à¦•à¦²à§‡à¦œà§‡à¦° à¦†à¦®à¦¾à¦° à¦¸à¦¹à¦•à¦°à§à¦®à§€ à¦¬à¦¿à¦œà§à¦ž à¦¶à¦¿à¦•à§à¦·à¦• à¦®à¦¨à§à¦¡à¦²à§€, à¦…à¦«à¦¿à¦¸ à¦¸à¦¹à¦•à¦¾à¦°à§€ à¦à¦¬à¦‚ à¦…à¦«à¦¿à¦¸ à¦¸à¦¹à¦¾à§Ÿà¦•à¦—à¦£ à¦¨à¦¿à¦°à¦²à¦¸à¦­à¦¾à¦¬à§‡ à¦ªà§à¦°à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦šà¦¾à¦²à¦¿à§Ÿà§‡ à¦¯à¦¾à¦šà§à¦›à§‡à¦¨à¥¤ à¦†à¦®à¦¿ à¦¦à§ƒà§à¦­à¦¾à¦¬à§‡ à¦†à¦¶à¦¾ à¦•à¦°à¦¿&nbsp; à¦¦à¦¾à¦—à¦¨à¦­à§‚à¦žà¦¾ à¦‰à¦ªà¦œà§‡à¦²à¦¾à¦° à¦¸à§à¦¯à§‹à¦—à§à¦¯ à¦šà§‡à§Ÿà¦¾à¦°à¦®à§à¦¯à¦¾à¦¨ à¦œà¦¨à¦¾à¦¬ à¦¦à¦¿à¦¦à¦¾à¦°à§à¦² à¦•à¦¬à¦¿à¦° à¦°à¦¤à¦¨&nbsp; à¦à¦¬à¦‚ à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨ à¦‰à¦ªà¦œà§‡à¦²à¦¾à¦° à¦¨à¦¿à¦°à§à¦¬à¦¾à¦¹à§€ à¦…à¦«à¦¿à¦¸à¦¾à¦° à¦œà¦¨à¦¾à¦¬ à¦¨à¦¾à¦¹à¦¿à¦¦à¦¾ à¦†à¦•à§à¦¤à¦¾à¦° à¦¤à¦¾à¦¨à¦¿à§Ÿà¦¾ à¦¸à¦¹ à¦à¦²à¦¾à¦•à¦¾à¦° à¦¸à§à¦¥à¦¾à¦¨à§€à§Ÿ à¦—à¦¨à§à¦¯à¦®à¦¾à¦¨à§à¦¯ à¦¬à§à¦¯à¦•à§à¦¤à¦¿à¦¬à¦°à§à¦—à§‡à¦° à¦¸à¦¾à¦°à§à¦¬à¦¿à¦• à¦¸à¦¹à¦¯à§‹à¦—à§€à¦¤à¦¾à§Ÿ à¦à¦‡ à¦•à¦²à§‡à¦œ à¦†à¦°à¦“ à¦‰à¦¨à§à¦¨à¦¤à¦¿ à¦“ à¦¸à¦®à§ƒà¦¦à§à¦§à¦¿ à¦…à¦°à§à¦œà¦¨ à¦•à¦°à¦¬à§‡ à¥¤ à¦à¦‡ à¦•à¦²à§‡à¦œ à¦¥à§‡à¦•à§‡ à¦¶à¦¿à¦•à§à¦·à¦¾ à¦—à§à¦°à¦¹à¦£ à¦•à¦°à§‡ à¦ªà§à¦°à¦¤à¦¿à¦Ÿà¦¿ à¦¶à¦¿à¦•à§à¦·à¦¾à¦°à§à¦¥à§€ à¦¦à§‡à¦¶ à¦“ à¦¦à¦¶à§‡à¦° à¦¸à§‡à¦¬à¦¾à§Ÿ à¦¨à¦¿à¦œà§‡à¦•à§‡ à¦‰à§Žà¦¸à¦°à§à¦— à¦•à¦°à¦¬à§‡ à¦ à¦®à¦¾à¦¨à¦¸à§‡ à¦¤à¦¾à¦¦à§‡à¦°à¦•à§‡ à¦—à¦ à¦¨ à¦•à¦°à¦¾à¦‡ à¦†à¦®à¦¾à¦¦à§‡à¦° à¦à¦•à¦®à¦¾à¦¤à§à¦° à¦²à¦•à§à¦·à§à¦¯ à¦“ à¦‰à¦¦à§à¦¦à§‡à¦¶à§à¦¯ à¥¤ à¦® ) à¦‰à¦ªà¦¾à¦§à§à¦¯à¦•à§à¦· à¦“ à¦­à¦¾à¦°à¦ªà§à¦°à¦¾à¦ªà§à¦¤ à¦…à¦§à§à¦¯à¦•à§à¦· à¦‡à¦•à¦¬à¦¾à¦² à¦®à§‡à¦®à§‹à¦°à¦¿à¦¯à¦¼à¦¾à¦² à¦¸à¦°à¦•à¦¾à¦°à¦¿ à¦•à¦²à§‡à¦œ à¦¦à¦¾à¦—à¦¨à¦­à§‚à¦à¦‡à§Ÿà¦¾, à¦«à§‡à¦¨à§€à¥¤</div>', '181603551.jpg', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `rules_regulation`
 --
 
@@ -228,6 +275,27 @@ CREATE TABLE `rules_regulation` (
 
 INSERT INTO `rules_regulation` (`id`, `description`, `create_at`, `upload_at`) VALUES
 (1, '<p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">1. Students are expected to come to the college in neat, clean and simple clothes. They must conform to the high standards of modesty maintained by the institutions. They should not wear gaudy dresses.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">2. All men students are expected to wear pants and shirts-bush shirts or slack shirts. Tshirts are not allowed. Women students are strictly not permitted to wear skirts, leggings, jeans, frocks and high tops.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">3. Students should not bring discredit to the college or to themselves. Insubordination and rude behavior of any kind inside or outside the college will be severely dealt with.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">4. Students should be regular and punctual in attending the classes and all activities connected with the college. No student is allowed to enter the classroom or leave the class room during class hours without the permission of the principal. They are not permitted to go out during lunch break.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">5. The students should stand up and wish the teacher when he/she enters the class. They should take their seats only after the teacher takes his/her seat or instructs the students to do so.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">6. They should wish all the teachers irrespective of their departments.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">7. Strict silence should be maintained during class hours in the Classrooms, Library, Laboratory, Examination halls and in the College premises.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">8. Use of books, magazines and other materials not approved by the principal will not be permitted in the college campus.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">9. All lost property should be brought to the college office.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">10. Students are expected to take care of the college property and help in keeping the premises neat and clean. Disfiguring of walls, doors or breaking the furniture is a breach of discipline and will not be tolerated.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">11. Students are forbidden from organizing any meeting in the college premises or collecting money for any purpose without the permission of the principal.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">12. Students are not permitted to entertain the visitors in the college during the working hours. They are strictly forbidden from receiving personal phone calls or letters.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">13. Student should not enter the office room, staff room or computer lab without permission.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">14. Monthly tests and model examinations are part of curriculum and student should be sincere in taking these tests. They should not indulge in any kind of malpractice during examinations or tests.</p><p style=\"padding: 0px; margin-right: 0px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\">15. Eve-teasing is strictly prohibited &amp; eve-teasers will be dismissed from the college. According to TamilNadu eve-teasing ordinance of 1998 whoever commits or participated or abets in eve-teasing, in or within the premises of any educational institutions, is liable for imprisonment for term which may extend to one year or shall we liable to a fine which may extend to RS.10000/- or both.</p>', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_info`
+--
+
+CREATE TABLE `student_info` (
+  `id` int(200) NOT NULL,
+  `date` date NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student_info`
+--
+
+INSERT INTO `student_info` (`id`, `date`, `title`, `image`) VALUES
+(1, '2022-08-28', 'dsafasdf', NULL),
+(2, '2022-08-28', 'fsdfsdf', NULL);
 
 -- --------------------------------------------------------
 
@@ -258,9 +326,64 @@ INSERT INTO `sub_menu` (`id`, `sl`, `main_menu`, `link_name`, `route_name`, `sta
 (10, 7, 15, 'Infrastucture', '../website_settings/infrastucture.php', 1),
 (11, 8, 15, 'Rules Regulation', '../website_settings/rules_regulation.php', 1),
 (12, 9, 15, 'Citizen charter', '../website_settings/cityzen_charter.php', 1),
-(13, 10, 15, 'Student Info', '../website_settings/student_info.php', 1),
 (14, 11, 15, 'Yearly Work Plan', '../website_settings/yearly_work.php', 1),
-(15, 12, 15, 'FEES', '../website_settings/fees.php', 1);
+(15, 12, 15, 'FEES', '../website_settings/fees.php', 1),
+(16, 16, 15, 'Student Info', '../website_settings/student_info.php', 1),
+(17, 17, 17, 'Principal Message', '../adminstration/principal_message.php', 1),
+(18, 18, 17, 'Vice-Principal Message', '../adminstration/vice-principla_message.php', 1),
+(19, 19, 17, 'Founder Message', '../adminstration/founder_message.php', 1),
+(20, 20, 17, 'Presidant Message', '../adminstration/presidant_message.php', 1),
+(21, 21, 17, 'List of Member', '../adminstration/list_of_member.php', 1),
+(22, 22, 17, 'Guidline Teacher/Staff', '../adminstration/guidline_teacher.php', 1),
+(23, 24, 17, 'View Guidline Teacher/Staff', '../adminstration/view_guidline_teacher.php', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vice-principla_message`
+--
+
+CREATE TABLE `vice-principla_message` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `create_at` timestamp NULL DEFAULT NULL,
+  `upload_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `vice-principla_message`
+--
+
+INSERT INTO `vice-principla_message` (`id`, `name`, `title`, `description`, `image`, `create_at`, `upload_at`) VALUES
+(1, 'à¦¸à¦¾à¦®à¦›à§à¦² à¦•à¦°à¦¿à¦® à¦šà§Œà¦§à§à¦°à§€ à¦¤à¦¾à¦¨à¦¿à¦®', 'Vice Principal Message', '<p style=\"padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\"><span style=\"padding: 0px; margin: 0px; color: rgb(51, 51, 51); font-family: Roboto, sans-serif;\">à¦†à¦œà¦•à§‡à¦° à¦à¦‡ à¦¦à¦¿à¦¨à§‡ à¦¶à§à¦°à¦¦à§à¦§à¦¾à¦° à¦¸à¦¾à¦¥à§‡ à¦¸à§à¦®à¦°à¦£ à¦•à¦°à¦›à¦¿ à¦¯à¦¾à¦à¦° à¦¸à§à¦®à§ƒà¦¤à¦¿ à¦°à¦•à§à¦·à¦¾à¦°à§à¦¥à§‡ à¦ à¦®à¦¹à¦¾à¦¨ à¦¬à¦¿à¦¦à§à¦¯à¦¾à¦ªà§€à¦  à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¿à¦¤ à¦¸à§‡à¦‡ à¦®à¦°à¦¹à§à¦® à¦‡à¦•à¦¬à¦¾à¦² à¦¹à§‹à¦¸à§‡à¦¨ à¦•à§‡ à¥¤&nbsp;</span><br style=\"padding: 0px; margin: 0px;\"></p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\"><font color=\"#333333\" face=\"Roboto, sans-serif\" style=\"padding: 0px; margin: 0px;\">à¦à¦•à§à¦¶ à¦¶à¦¤à¦•à§‡à¦° à¦šà§à¦¯à¦¾à¦²à§‡à¦žà§à¦œ à¦®à§‹à¦•à¦¾à¦¬à§‡à¦²à¦¾à¦° à¦²à¦•à§à¦·à§à¦¯à§‡ à¦‡à¦•à¦¬à¦¾à¦² à¦®à§‡à¦®à§‹à¦°à¦¿à¦¯à¦¼à¦¾à¦² à¦¸à¦°à¦•à¦¾à¦°à¦¿ à¦•à¦²à§‡à¦œ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾ à¦•à¦°à¦¾ à¦¹à¦¯à¦¼ à¥¤&nbsp;&nbsp;</font></p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\"><font color=\"#333333\" face=\"Roboto, sans-serif\" style=\"padding: 0px; margin: 0px;\"><br style=\"padding: 0px; margin: 0px;\"></font></p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\"><font color=\"#333333\" face=\"Roboto, sans-serif\" style=\"padding: 0px; margin: 0px;\">à¦¦à¦¾à¦—à¦¨à¦­à§‚à¦à¦‡à§Ÿà¦¾ à¦‰à¦ªà¦œà§‡à¦²à¦¾à¦° à¦†à¦²à¦¾à¦‡à¦¯à¦¼à¦¾à¦°à¦ªà§à¦° à¦¨à¦¿à¦¬à¦¾à¦¸à§€ à¦¬à¦¿à¦¶à¦¿à¦·à§à¦Ÿ à¦¦à¦¾à¦¨à¦¬à§€à¦°, à¦¶à¦¿à¦•à§à¦·à¦¾à¦¨à§à¦°à¦¾à¦—à§€ à¦¸à¦«à¦² à¦¬à§à¦¯à¦¬à¦¸à¦¾à¦¯à¦¼à§€, à¦à¦«.à¦¬à¦¿.à¦¸à¦¿.à¦†à¦‡-à¦à¦° à¦¸à¦¾à¦¬à§‡à¦• à¦¸à¦­à¦¾à¦ªà¦¤à¦¿, à¦œà¦¾à¦¤à§€à¦¯à¦¼ à¦“ à¦†à¦¨à§à¦¤à¦°à§à¦œà¦¾à¦¤à¦¿à¦• à¦…à¦™à§à¦—à¦¨à§‡ à¦…à¦¤à§à¦¯à¦¨à§à¦¤ à¦¸à§à¦ªà¦°à¦¿à¦šà¦¿à¦¤ à¦œà¦¨à¦¾à¦¬ à¦†à¦²à¦¹à¦¾à¦œà§à¦¬ à¦†à¦¬à¦¦à§à¦² à¦†à¦‰à¦¯à¦¼à¦¾à¦² à¦®à¦¿à¦¨à§à¦Ÿà§&nbsp; à¦¸à¦¾à¦¹à§‡à¦¬à§‡à¦° à¦à¦•à¦• à¦…à¦°à§à¦¥à¦¾à¦¯à¦¼à¦¨à§‡ à§§à§¯à§®à§« à¦¸à¦¾à¦²à§‡ à¦ à¦•à¦²à§‡à¦œà¦Ÿà¦¿ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾ à¦²à¦¾à¦­ à¦•à¦°à§‡à¥¤ à¦¤à¦¾à¦à¦°à¦‡ à¦ªà¦¿à¦¤à¦¾ à¦¦à¦¾à¦—à¦¨à¦­à§‚à¦à¦‡à¦¯à¦¼à¦¾ à¦‰à¦ªà¦œà§‡à¦²à¦¾à¦° à¦ªà§à¦°à¦¥à¦® à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¿à¦¤ à¦šà§‡à¦¯à¦¼à¦¾à¦°à¦®à§à¦¯à¦¾à¦¨ à¦†à¦²à¦¹à¦¾à¦œà§à¦¬ à¦¸à¦¾à¦«à¦¿à¦‰à¦²à§à¦²à¦¾à¦¹ à¦“ à¦¤à¦¾à¦à¦° à¦šà¦¾à¦šà¦¾ à¦œà¦¨à¦¾à¦¬ à¦†à¦²à¦¹à¦¾à¦œà§à¦¬ à¦¹à¦¾à¦¬à¦¿à¦¬ à¦‰à¦²à§à¦²à¦¾à¦¹ à¦¸à¦¾à¦¹à§‡à¦¬ à¦ à¦•à¦²à§‡à¦œ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦° à¦ªà§‡à¦›à¦¨à§‡ à¦¯à¦¥à§‡à¦·à§à¦Ÿ à¦…à¦¬à¦¦à¦¾à¦¨ à¦°à§‡à¦–à§‡à¦›à§‡à¦¨à¥¤</font></p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\"><font color=\"#333333\" face=\"Roboto, sans-serif\" style=\"padding: 0px; margin: 0px;\">à¦®à¦¾à¦¤à§à¦° à§§à§ªà§® à¦œà¦¨ à¦›à¦¾à¦¤à§à¦°à¦›à¦¾à¦¤à§à¦°à§€ à¦¨à¦¿à¦¯à¦¼à§‡ à¦ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à¦Ÿà¦¿à¦° à¦¯à¦¾à¦¤à§à¦°à¦¾ à¦¶à§à¦°à§ à¦¹à¦¯à¦¼à¥¤ à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨à§‡ à¦ªà§à¦°à¦¾à¦¯à¦¼ à¦šà¦¾à¦° à¦¹à¦¾à¦œà¦¾à¦° à¦›à¦¾à¦¤à§à¦°à¦›à¦¾à¦¤à§à¦°à§€ à¦ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à§‡ à¦…à¦§à§à¦¯à¦¯à¦¼à¦¨ à¦•à¦°à¦›à§‡à¥¤ à¦¦à§‡à¦¶à¦¿-à¦¬à¦¿à¦¦à§‡à¦¶à¦¿ à¦®à§‚à¦²à§à¦¯à¦¬à¦¾à¦¨ à¦—à§à¦°à¦¨à§à¦¥à¦¸à¦¹ à¦ªà§à¦°à¦¾à¦¯à¦¼ à¦¦à¦¶ à¦¹à¦¾à¦œà¦¾à¦° à¦¬à¦‡ à¦¸à¦‚à¦¬à¦²à¦¿à¦¤ à¦à¦•à¦Ÿà¦¿ à¦¸à§à¦¬à¦¿à¦¶à¦¾à¦² à¦²à¦¾à¦‡à¦¬à§à¦°à§‡à¦°à¦¿ à¦†à¦›à§‡à¥¤ à¦¯à§‡à¦–à¦¾à¦¨à§‡ à¦à¦•à¦¸à¦¾à¦¥à§‡ à§§à§¦à§¦ à¦œà¦¨ à¦¶à¦¿à¦•à§à¦·à¦¾à¦°à§à¦¥à§€ à¦¬à¦¸à§‡ à¦…à¦§à§à¦¯à¦¯à¦¼à¦¨ à¦•à¦°à¦¤à§‡ à¦ªà¦¾à¦°à§‡à¥¤ à§©à§« à¦œà¦¨ à¦¸à§à¦ªà§à¦°à¦¶à¦¿à¦•à§à¦·à¦¿à¦¤ à¦¶à¦¿à¦•à§à¦·à¦•, à§¨à§¦ à¦œà¦¨ à§©à¦¯à¦¼ à¦“ à§ªà¦°à§à¦¥ à¦¶à§à¦°à§‡à¦£à¦¿à¦° à¦¦à¦•à§à¦· à¦•à¦°à§à¦®à¦šà¦¾à¦°à§€ à¦à¦¬à¦‚ à¦†à¦§à§à¦¨à¦¿à¦• à¦¤à¦¥à§à¦¯ à¦ªà§à¦°à¦¯à§à¦•à§à¦¤à¦¿à¦° à¦®à¦¾à¦§à§à¦¯à¦®à§‡ à¦¯à§à¦—à§‹à¦ªà¦¯à§‹à¦—à§€ à¦“ à¦‰à¦¨à§à¦¨à¦¤ à¦®à¦¾à¦¨à§‡à¦° à¦‰à¦šà§à¦š à¦¶à¦¿à¦•à§à¦·à¦¾ à¦¬à¦¿à¦¸à§à¦¤à¦¾à¦°à§‡à¦° à¦¦à¦¾à¦¯à¦¼à¦¿à¦¤à§à¦¬ à¦ªà¦¾à¦²à¦¨ à¦•à¦°à¦›à§‡ à¦ à¦ªà§à¦°à¦¤à¦¿à¦·à§à¦ à¦¾à¦¨à¥¤</font></p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\"><font color=\"#333333\" face=\"Roboto, sans-serif\" style=\"padding: 0px; margin: 0px;\">à¦¸à¦®à¦¾à¦œà§‡à¦° à¦¬à§à¦¯à¦¾à¦§à¦¿à¦°à§‚à¦ªà§‡ à¦¬à¦¿à¦¬à§‡à¦šà¦¿à¦¤ à¦¸à¦¨à§à¦¤à§à¦°à¦¾à¦¸, à¦®à¦¾à¦¦à¦•, à¦‡à¦­à¦Ÿà¦¿à¦œà¦¿à¦‚ à¦“ à¦¨à¦•à¦² à¦ªà§à¦°à¦¬à¦£à¦¤à¦¾à¦®à§à¦•à§à¦¤ à¦¶à¦¿à¦•à§à¦·à¦¾à¦™à§à¦—à¦¨ à¦¹à¦¿à¦¸à§‡à¦¬à§‡ à¦ à¦•à¦²à§‡à¦œà§‡ à¦ˆà¦°à§à¦·à¦£à§€à¦¯à¦¼ à¦¦à§ƒà¦·à§à¦Ÿà¦¾à¦¨à§à¦¤ à¦¸à§à¦¥à¦¾à¦ªà¦¨à§‡ à¦†à¦®à¦¿ à¦¤à§ƒà¦ªà§à¦¤à¥¤</font></p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\"><font color=\"#333333\" face=\"Roboto, sans-serif\" style=\"padding: 0px; margin: 0px;\">à¦•à¦°à§à¦¤à§ƒà¦ªà¦•à§à¦·, à¦ªà§à¦°à¦¶à¦¾à¦¸à¦¨, à¦¶à¦¿à¦•à§à¦·à¦•-à¦…à¦­à¦¿à¦­à¦¾à¦¬à¦•, à¦¶à¦¿à¦•à§à¦·à¦¾à¦°à§à¦¥à§€, à¦•à¦°à§à¦®à¦šà¦¾à¦°à§€à¦¸à¦¹ à¦¸à¦‚à¦¶à§à¦²à¦¿à¦·à§à¦Ÿ à¦¸à¦•à¦²à§‡à¦° à¦¸à¦™à§à¦—à§‡ à¦°à¦¯à¦¼à§‡à¦›à§‡ à¦®à¦§à§à¦° à¦“ à¦ªà¦¾à¦°à¦¿à¦¬à¦¾à¦°à¦¿à¦• à¦¸à¦®à§à¦ªà¦°à§à¦•à¥¤ à¦à¦° à¦•à§à¦°à¦®à§‹à¦¨à§à¦¨à¦¤à¦¿à¦¤à§‡ à¦¨à¦¿à¦œà§‡à¦•à§‡ à¦œà¦¡à¦¼à¦¿à¦¤ à¦°à¦¾à¦–à¦¤à§‡ à¦ªà§‡à¦°à§‡ à¦—à¦°à§à¦¬à¦¬à§‹à¦§ à¦•à¦°à¦›à¦¿à¥¤ à¦à¦•à§à¦¶ à¦¶à¦¤à¦•à§‡à¦° à¦¯à§‹à¦—à§à¦¯ à¦¨à¦¾à¦—à¦°à¦¿à¦• à¦¤à§ˆà¦°à¦¿à¦¤à§‡ à¦‡à¦•à¦¬à¦¾à¦² à¦®à§‡à¦®à§‹à¦°à¦¿à¦¯à¦¼à¦¾à¦² à¦¸à¦°à¦•à¦¾à¦°à¦¿ à¦•à¦²à§‡à¦œ à¦¯à¦¥à¦¾à¦¯à¦¥ à¦­à§‚à¦®à¦¿à¦•à¦¾ à¦ªà¦¾à¦²à¦¨à§‡ à¦¸à¦•à§à¦·à¦® à¦¹à§‹à¦•, à¦®à¦¹à¦¾à¦¨ à¦†à¦²à§à¦²à¦¾à¦¹à¦° à¦•à¦¾à¦›à§‡ à¦à¦‡ à¦ªà§à¦°à¦¾à¦°à§à¦¥à¦¨à¦¾à¥¤</font></p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\"><font color=\"#333333\" face=\"Roboto, sans-serif\" style=\"padding: 0px; margin: 0px;\">( à¦®à§‹à¦ƒ à¦†à¦¬à§à¦² à¦•à¦¾à¦²à¦¾à¦® )&nbsp;</font></p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\"><font color=\"#333333\" face=\"Roboto, sans-serif\" style=\"padding: 0px; margin: 0px;\">à¦‰à¦ªà¦¾à¦§à§à¦¯à¦•à§à¦· à¦“ à¦­à¦¾à¦°à¦ªà§à¦°à¦¾à¦ªà§à¦¤ à¦…à¦§à§à¦¯à¦•à§à¦·</font></p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\"><font color=\"#333333\" face=\"Roboto, sans-serif\" style=\"padding: 0px; margin: 0px;\">à¦‡à¦•à¦¬à¦¾à¦² à¦®à§‡à¦®à§‹à¦°à¦¿à¦¯à¦¼à¦¾à¦² à¦¸à¦°à¦•à¦¾à¦°à¦¿ à¦•à¦²à§‡à¦œ</font></p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; color: rgb(33, 37, 41); font-family: &quot;Baloo Chettan 2&quot;, AdorshoLipi, cursive; text-align: justify;\"><font color=\"#333333\" face=\"Roboto, sans-serif\" style=\"padding: 0px; margin: 0px;\">à¦¦à¦¾à¦—à¦¨à¦­à§‚à¦à¦‡à§Ÿà¦¾, à¦«à§‡à¦¨à§€à¥¤</font></p>', '557335007.jpg', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `yearly_work_plan`
+--
+
+CREATE TABLE `yearly_work_plan` (
+  `id` int(200) NOT NULL,
+  `date` date NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `yearly_work_plan`
+--
+
+INSERT INTO `yearly_work_plan` (`id`, `date`, `title`, `image`) VALUES
+(1, '2022-08-28', 'scfsf', NULL),
+(2, '2022-08-29', 'Tazim', NULL),
+(3, '2022-08-28', 'dsfdasfdasf', NULL),
+(4, '2022-08-28', 'gdfasdf', NULL),
+(5, '2022-08-28', 'asdfsdf', NULL),
+(6, '2022-08-28', 'dfsadf', NULL);
 
 --
 -- Indexes for dumped tables
@@ -297,6 +420,12 @@ ALTER TABLE `fees`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `founder_message`
+--
+ALTER TABLE `founder_message`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `history`
 --
 ALTER TABLE `history`
@@ -321,9 +450,21 @@ ALTER TABLE `mission_vision`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `principal_message`
+--
+ALTER TABLE `principal_message`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `rules_regulation`
 --
 ALTER TABLE `rules_regulation`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `student_info`
+--
+ALTER TABLE `student_info`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -332,6 +473,18 @@ ALTER TABLE `rules_regulation`
 ALTER TABLE `sub_menu`
   ADD PRIMARY KEY (`id`),
   ADD KEY `test` (`main_menu`);
+
+--
+-- Indexes for table `vice-principla_message`
+--
+ALTER TABLE `vice-principla_message`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `yearly_work_plan`
+--
+ALTER TABLE `yearly_work_plan`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -353,7 +506,7 @@ ALTER TABLE `citizen_charter`
 -- AUTO_INCREMENT for table `create_admin`
 --
 ALTER TABLE `create_admin`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `exam_rules`
@@ -366,6 +519,12 @@ ALTER TABLE `exam_rules`
 --
 ALTER TABLE `fees`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `founder_message`
+--
+ALTER TABLE `founder_message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `history`
@@ -383,12 +542,18 @@ ALTER TABLE `infrastucture`
 -- AUTO_INCREMENT for table `main_menu`
 --
 ALTER TABLE `main_menu`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `mission_vision`
 --
 ALTER TABLE `mission_vision`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `principal_message`
+--
+ALTER TABLE `principal_message`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -398,10 +563,28 @@ ALTER TABLE `rules_regulation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `student_info`
+--
+ALTER TABLE `student_info`
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `sub_menu`
 --
 ALTER TABLE `sub_menu`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `vice-principla_message`
+--
+ALTER TABLE `vice-principla_message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `yearly_work_plan`
+--
+ALTER TABLE `yearly_work_plan`
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
