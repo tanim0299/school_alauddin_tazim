@@ -1,15 +1,15 @@
 <!-- Start main left sidebar menu -->
         <div class="main-sidebar sidebar-style-3">
             <aside id="sidebar-wrapper">
-                <div class="sidebar-brand">
-                    <a href="../../index.php"><img src="../../asset/img/logo.png" class="img-fluid" style="height: 50px;width: 70%;"></a>
+                <div class="sidebar-brand" style="margin-top: 20px;">
+                    <a href="../../index.php"><img src="../../asset/img/settings/<?php echo $showdata['logo']; ?>" style="height: 70px;" class="img-fluid"></a>
                 </div>
                 <div class="sidebar-brand sidebar-brand-sm">
-                    <a href="index.php">CP</a>
+                    <a href="../../index.php">CP</a>
                 </div>
-                <ul class="sidebar-menu">
+                <ul class="sidebar-menu" style="margin-bottom: 50px;margin-top: 20px;">
                     <li class="menu-header">Dashboard</li>
-                    <li><a class="nav-link" href="../../index.php"><i class="far fa-square"></i> <span>Dashboard</span></a></li>
+                    <li><a class="nav-link" href="../../index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                     <?php
                     if($_SESSION['admin_type'] == 'developer')
                     {
@@ -60,6 +60,8 @@
                             }
                         }
                         ?>
+                        <li class="menu-header">Settings</li>
+                        <li><a class="nav-link" href="../settings/settings.php"><i class="fa fa-gears"></i> <span>Settings</span></a></li>
                 </ul>
             </aside>
         </div>

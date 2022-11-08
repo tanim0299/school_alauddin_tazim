@@ -10,7 +10,7 @@ include 'header.php';
 						<b>ইনফ্রাসটাকচার</b>
 					</div>
 					<?php 
-					$sql = $db->link->query("SELECT * FROM `infrastucture` WHERE `id`=1");
+					$sql = $db->link->query("SELECT * FROM `infrastructure` WHERE `id`=1");
 					if($sql)
 					{
 						$showdata = $sql->fetch_assoc();

@@ -7,26 +7,30 @@ include 'header.php';
 			<div class="left-body">
 				<div class="left-single-box">
 					<div class="left-body-boxtitle">
-						<b>ছবি গ্যালারী</b>
+						<b>ভিডিও গ্যালারী</b>
 					</div>
-					<div class="body-text">
-						<div class="row">
-							<div class="col-6">
-								<iframe width="360" height="315" src="https://www.youtube.com/embed/Ad0tYhQPucg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<li class="list-group-item">
+						<div class="row" uk-lightbox>
+						<?php
+								$sql = $db->link->query("SELECT * FROM `video_gallery` ORDER BY `id` DESC");
+								if($sql)
+								{
+								while ($showdata = $sql->fetch_array())
+								{
+							?>
+							
+							<div class="col-sm-6 col-12 p-0">
+								<iframe width="100%" height="250" src="<?php print $showdata['url']; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<div class="uk-overlay uk-overlay-primary uk-position-bottom p-3">
+									<p><?php print $showdata['title']; ?></p>
+								</div>
 							</div>
-							<div class="col-6">
-								<iframe width="360" height="315" src="https://www.youtube.com/embed/Ad0tYhQPucg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div>
-        <samp>
-            <span>Current page:</span>
-            <span id="page-number-1"></span>
-        </samp>
-
-        <div id="pagination-1"></div>
-    </div>
-					</div>
+							<?php
+							}
+						}
+						?>
+						
+					</li>
 				</div>
 			</div>
 		</div>

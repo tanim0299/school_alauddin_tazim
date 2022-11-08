@@ -8,6 +8,9 @@ include('../layouts/sidebar.php');
                 <div class="form-header">
                     <h4>Admission Result</h4>
                 </div>
+                <div class="links">
+                    <a href="view_admission_result.php" class="btn btn-info">View Admission Result</a>
+                </div>
                 <?php 
                 if(isset($_POST['save']))
                 {
@@ -15,6 +18,23 @@ include('../layouts/sidebar.php');
                     $title = $_POST['title'];
 
                     $db->insert('admission_result',['date'=>$date,'title'=>$title]);
+
+                    $file = $_FILES['image']['name'];
+                    
+                    if($file)
+                    {
+                        $id = $db->link->insert_id;
+                        $extension = pathinfo($file, PATHINFO_EXTENSION);
+
+                        $image_name = rand().'.'.$extension;
+
+                        $image_path = '../../asset/img/admission_result/'.$image_name;
+
+                        move_uploaded_file($_FILES['image']['tmp_name'],$image_path);
+
+                        $db->update('admission_result',['image'=>$image_name],"id='$id'");
+
+                    }
 
                 }
                 ?>

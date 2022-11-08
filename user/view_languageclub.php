@@ -7,16 +7,30 @@ include 'header.php';
 			<div class="left-body">
 				<div class="left-single-box">
 					<div class="left-body-boxtitle">
-						<b>ল্যাংগুয়েজ ক্লাব</b>
-					</div>
+					<?php
+					if(isset($_GET['id']))
+					{
+						$id = $_GET['id'];
+						$sql = $db->link->query("SELECT * FROM `language_club` WHERE `id`=$id");
+						
+						if($sql)
+						{
+							$showdata = $sql->fetch_assoc();
+						}
+					?>
+					<b><?php echo $showdata['title']; ?></b>
+				</div>
 					<div class="body-text">
 						<div class="news">
-							<div class="news-image">
-								<img src="../assets/image/languageClub/1.jpg" class="img-fluid">
-							</div>
-							<div class="news_text">
-								<p>বিস্তারিত:</p><br>
-							</div>
+							<li class="list-group-item">
+								<img src="../backend/asset/img/language_club/<?php print $showdata['image']; ?>" class="img-fluid"><br><br>
+								<h4><?php echo $showdata['title']; ?></h4>
+								<span><?php echo $showdata['date']; ?></span><br><br>
+								<span><?php echo $showdata['description']; ?><br></span>
+								<?php
+								}
+								?>
+							</li>
 						</div>
 					</div>
 				</div>

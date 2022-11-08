@@ -6,43 +6,69 @@ include 'header.php';
 		<div class="col-lg-9 col-md-9 col-12">
 			<div class="left-body">
 				<div class="divider">
-					<div class="left-body-boxtitle">
-						<i class="fa fa-caret-right"></i><b>ম্যানেজিং কমিটির সদস্যবৃন্দ</b><span style="color: yellow;"></span>
-					</div>
+					<?php
+					if(isset($_GET['id']))
+					{
+						$id=$_GET['id'];
+						// echo $id;
+						$sql=$db->link->query("SELECT * FROM `committee` WHERE `id`='$id'");
+						if($sql)
+						{
+							$showdata=$sql->fetch_assoc();
+						}
+						?>
+						<div class="left-body-boxtitle">
+						<i class="fa fa-caret-right"></i><b><?php echo $showdata['title'];?> তালিকা</b><span style="color: yellow;"></span>
+						</div>
+					<?php	
+					}
+					?>
+					
 					<div class="teacher-info-box">
 						<div class="row">
-							<div class="col-6">
-								<div class="teacher_info-single-box">
-									<div class="teacher_image">
-										<img src="../assets/image/teacher.jpg" class="img-fluid">
+							<?php 
+							$sql = $db->link->query("SELECT * FROM `add_member` WHERE `committee`='$id'");
+							if($sql)
+							{
+								while($member = $sql->fetch_assoc())
+								{
+									?>
+									<div class="col-6">
+										<div class="teacher_info-single-box">
+											<div class="teacher_image">
+												<img src="../backend/asset/img/committee/<?php echo $member['image'];?>" class="img-fluid">
+											</div>
+											<div class="information">
+												<table class="table table-bordered">
+													<tr>
+														<td>Name</td>
+														<td><?php echo $member['name']; ?></td>
+													</tr>
+													<tr>
+														<td>Designation</td>
+														<td><?php echo $member['designation']; ?></td>
+													</tr>
+													<tr>
+														<td>Mobile</td>
+														<td><?php echo $member['mobile'];?></td>
+													</tr>
+													<tr>
+														<td>Email</td>
+														<td><?php echo $member['email'];?></td>
+													</tr>
+													<tr>
+														<td colspan="2" style="text-align:center;">
+															<a href="view_member.php?id=<?php echo $member['id']; ?>" class="btn btn-outline-success">Details</a>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
 									</div>
-									<div class="information">
-										<table class="table table-bordered">
-											<tr>
-												<td>Name</td>
-												<td>Mostafizur Rahman</td>
-											</tr>
-											<tr>
-												<td>Designation</td>
-												<td>Lecturer</td>
-											</tr>
-											<tr>
-												<td>Mobile</td>
-												<td>+8801575434262</td>
-											</tr>
-											<tr>
-												<td>Email</td>
-												<td>info.sbit@gmail.com</td>
-											</tr>
-											<tr>
-												<td colspan="2" style="text-align:center;">
-													<a href="view_member.php" class="btn btn-outline-success">Details</a>
-												</td>
-											</tr>
-										</table>
-									</div>
-								</div>
-							</div>
+									<?php
+								}
+							}
+							?>
 						</div>
 					</div>
 				</div>

@@ -10,45 +10,74 @@ class database
   public $database="dynamicschool_database";
   public $link;
   public $message;
+  public $result;
 
   function __construct()
   {
     $this->database();
   }
 
-  private function database()
+  private function database() 
   {
-        $this->link=new mysqli($this->hostadress,$this->username,$this->password,$this->database);
-        if($this->link)
-        {
-          $this->message="Database Connection Successfulluy!!";
-        }
-        else
-        {
-          $this->message="Database Connection Unsuccessfull";
-        }
+    $this->link=new mysqli($this->hostadress,$this->username,$this->password,$this->database);
+    if($this->link)
+    {
+      $this->message="Database Connection Successfulluy!!";
+    }
+    else
+    {
+      $this->message="Database Connection Unsuccessfull";
+    }
   }
 
-  public function insert($table,$parameter=array())
+
+  public function insert($table,$parrmeter=array())
   {
-    $column = implode(',',array_keys($parameter));
+    // print_r($parrmeter);
 
-    $data = implode("','",$parameter);
+    $column= implode('`,`',array_keys($parrmeter) );
+    // echo $column;
 
-    $sql = "INSERT INTO $table($column) VALUES ('$data')";
+    $data= implode("','",$parrmeter);
+    // echo $data;
 
-    $result = $this->link->query($sql);
+    $sql ="INSERT INTO  $table(`$column`) VALUES ('$data')";  
+    // echo $sql;
+    $this->result= $this->link->query($sql);
 
-    if($result)
+    if($this->result)
     {
-      echo "<div class='alert alert-success'>Data Insert Succesfully</div>";
+      echo"<div class='alert alert-success'>Data Insert Succesfully</div>";
     }
     else
     {
       echo "<div class='alert alert-danger'>Data Insert Unsuccesfully</div>";
     }
-
   }
+
+
+
+  public function update($table,$parrmeter=array(),$id)
+  {
+    // $output = 0;
+    $args = array();
+    foreach($parrmeter as $key => $value)
+    {
+      $args[]= "`$key` = '$value'";
+    }
+    
+    // print_r($args);
+    $sql ="UPDATE $table SET " .implode(',', $args);
+
+    $sql .= "WHERE $id";
+
+    // print $sql;
+    $this->result= $this->link->query($sql);
+    
+  }
+
+
+
 
   function __destruct()
   {

@@ -9,8 +9,15 @@ include 'header.php';
 					<div class="left-body-boxtitle">
 						<b>গার্লস গাইড</b>
 					</div>
+					<?php 
+					$sql = $db->link->query("SELECT * FROM girls_guide WHERE `id`=1");
+					if($sql)
+					{
+						$showdata = $sql->fetch_assoc();
+					}
+					?>
 					<div class="body-text">
-						<p></p>
+						<?php echo $showdata['description']; ?>
 					</div>
 				</div>
 			</div>

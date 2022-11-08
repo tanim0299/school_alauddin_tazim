@@ -10,27 +10,40 @@ include 'header.php';
 						<b>বিএনসিসি নিউজ</b>
 					</div>
 					<div class="body-text">
+						<?php
+						$sql = $db->link->query("SELECT * FROM `bncc`");
+						if($sql)
+						{
+							while ($showdata = $sql->fetch_array())
+							{
+								?>
 						<div class="news">
 							<div class="news-single">
 								<div class="row">
 									<div class="col-3">
 										<div class="news-image">
-											<img src="../assets/image/bnccImage/1.jpg" class="img-fluid">
+											<img src="../backend/asset/img/bncc/<?php print $showdata['image']; ?>" class="img-fluid" style="max-height: 300px;">
 										</div>
 									</div>
 									<div class="col-8">
 										<div class="heading">
-											<a href="view_bncc.php">
-												বিএনসিসি
-											</a>
+											<a href="view_bncc.php?id=<?php echo $showdata['0']; ?>">
+											<?php echo $showdata['2']; ?>
+										</a>
 										</div>
 										<div class="pub-date">
-											<span>2022-06-05</span>
+											<span><?php echo $showdata['1']; ?></span>
 										</div>
+										
 									</div>
+									
 								</div>
 							</div>
 						</div>
+						<?php
+						}
+					}
+					?>
 					</div>
 				</div>
 			</div>

@@ -7,11 +7,11 @@ if(!isset($_SESSION['email']))
 {
     echo "<script>location = '../login/'</script>";
 }
-// $sql_info = $db->link->query("SELECT * FROM `website_info` WHERE `id`=1");
-// if($sql_info)
-// {
-//   $show_info = $sql_info->fetch_assoc();
-// }
+$data = $db->link->query("SELECT * FROM `settings` WHERE `id`=1");
+if($data)
+{
+ $showdata = $data->fetch_assoc();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +22,8 @@ if(!isset($_SESSION['email']))
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
 <title>Admin Dashboard</title>
 
+<!-- Icon -->
+<link rel="icon" type="image/x-icon" href="../../asset/img/settings/<?php echo $showdata['logo']; ?>">
 
 <!-- CSS Libraries -->
 <link rel="stylesheet" href="../../assets/modules/datatables/datatables.min.css">
@@ -35,7 +37,6 @@ if(!isset($_SESSION['email']))
 <link rel="stylesheet" href="../../assets/modules/bootstrap/css/bootstrap.min.css">
 
 <link rel="stylesheet" href="../../assets/modules/bootstrap-daterangepicker/daterangepicker.css">
-
 
 <link rel="stylesheet" href="../../assets/modules/fontawesome/css/all.min.css">
 
@@ -57,29 +58,18 @@ if(!isset($_SESSION['email']))
 
 <link rel="stylesheet" href="../../assets/modules/izitoast/css/iziToast.min.css">
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-
 </head>
 <body class="layout-4">
 <!-- Page Loader -->
-<div class="page-loader-wrapper">
+<!-- <div class="page-loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
-</div>
+</div> -->
 
 <div id="app">
     <div class="main-wrapper main-wrapper-1">
         <div class="navbar-bg"></div>
         
         <!-- Start app top navbar -->
-        <?php 
-        $id = $_SESSION['admin_id'];
-        // echo $id;
-        $userdata = $db->link->query("SELECT * FROM `create_admin` WHERE `id`='$id'");
-        if($userdata)
-        {
-            $showuser = $userdata->fetch_assoc();
-            ?>
-            
         <nav class="navbar navbar-expand-lg main-navbar">
             <form class="form-inline mr-auto">
                 <ul class="navbar-nav mr-3">
@@ -94,8 +84,8 @@ if(!isset($_SESSION['email']))
             <ul class="navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                    <img alt="image" src="../../asset/img/admin_image/<?php echo $showuser['image']; ?>" class="rounded-circle mr-1">
-                    <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $showuser['username']; ?></div></a>
+                    <img alt="image" src="../../asset/img/admin_image/<?php echo $_SESSION['image']; ?>" class="rounded-circle mr-1">
+                    <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $_SESSION['username']; ?></div></a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="../logout.php" class="dropdown-item has-icon text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
@@ -103,9 +93,7 @@ if(!isset($_SESSION['email']))
             </ul>
         </nav>
 
-       <?php
-        }
-        ?>
+       
             
 
         

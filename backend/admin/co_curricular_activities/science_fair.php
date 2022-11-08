@@ -8,6 +8,9 @@ include('../layouts/sidebar.php');
                 <div class="form-header">
                     <h4>Science Fair</h4>
                 </div>
+                <div class="links">
+                    <a href="view_science_fair.php" class="btn btn-info">View Science Fair</a>
+                </div>
                 <?php 
                 if(isset($_POST['save']))
                 {
@@ -16,6 +19,23 @@ include('../layouts/sidebar.php');
                     $description = $_POST['description'];
 
                     $db->insert('science_fair',['date'=>$date,'title'=>$title, 'description'=>$description]);
+
+                    $file = $_FILES['image']['name'];
+                    
+                    if($file)
+                    {
+                        $id = $db->link->insert_id;
+                        $extension = pathinfo($file, PATHINFO_EXTENSION);
+
+                        $image_name = rand().'.'.$extension;
+
+                        $image_path = '../../asset/img/science_fair/'.$image_name;
+
+                        move_uploaded_file($_FILES['image']['tmp_name'],$image_path);
+
+                        $db->update('science_fair',['image'=>$image_name],"id='$id'");
+
+                    }
 
                 }
                 ?>

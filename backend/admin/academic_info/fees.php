@@ -6,7 +6,7 @@ include('../layouts/sidebar.php');
         <div class="main-content">
             <section class="section">
                 <div class="form-header">
-                    <h4>FEES</h4>
+                    <h4>Fees</h4>
                 </div>
                 <div class="form-section">
                     <?php 
@@ -34,7 +34,7 @@ include('../layouts/sidebar.php');
                     ?>
                     <form method="POST">
                         <div class="input-single-box">
-                            <label>Fees</label> 
+                            <label>Description</label> 
                             <textarea name="description" id="" class="form-control summernote"><?php echo $showdata['description']; ?></textarea>
                         </div>
                         <div class="input-single-box" style="text-align: center;">

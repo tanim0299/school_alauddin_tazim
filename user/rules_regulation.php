@@ -7,17 +7,17 @@ include 'header.php';
 			<div class="left-body">
 				<div class="left-single-box">
 					<div class="left-body-boxtitle">
-						<b>বিধি ও প্রবিধান</b>
+						<b>বিধি প্রবিধান</b>
 					</div>
 					<?php 
-					$sql=$db->link->query("SELECT * FROM `rules_regulation` WHERE `id`=1");
+					$sql = $db->link->query("SELECT * FROM rules_regulation WHERE `id`=1");
 					if($sql)
 					{
-						$showdata=$sql->fetch_assoc();
+						$showdata = $sql->fetch_assoc();
 					}
 					?>
 					<div class="body-text">
-						<?php echo $showdata['description']?>
+						<?php echo $showdata['description']; ?>
 					</div>
 				</div>
 			</div>

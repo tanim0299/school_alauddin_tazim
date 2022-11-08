@@ -9,8 +9,18 @@ include 'header.php';
 					<div class="left-body-boxtitle">
 						<b>ইউনিফর্ম</b>
 					</div>
+					<?php
+					$sql = $db->link->query("SELECT * FROM uniform WHERE `id`=1");
+					if($sql)
+					{
+						$showdata = $sql->fetch_assoc();
+					}
+					?>
 					<div class="body-text">
-						<p></p>
+						<?php echo $showdata['description']; ?>
+					</div>
+					<div class="body-text">
+						<img src="../backend/asset/img/uniform/<?php print $showdata['image']; ?>">
 					</div>
 				</div>
 			</div>

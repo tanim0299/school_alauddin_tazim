@@ -9,15 +9,15 @@ include 'header.php';
 					<div class="left-body-boxtitle">
 						<b>পরীক্ষা নিয়মাবলী</b>
 					</div>
-					<?php
-					$sql=$db->link->query("SELECT * FROM `exam_rules` WHERE `id`=1 ");
+					<?php 
+					$sql = $db->link->query("SELECT * FROM exam_rules WHERE `id`=1");
 					if($sql)
 					{
-						$showdata=$sql->fetch_assoc();
+						$showdata = $sql->fetch_assoc();
 					}
 					?>
 					<div class="body-text">
-						<?php echo $showdata['description'];?>
+						<?php echo $showdata['description']; ?>
 					</div>
 				</div>
 			</div>
@@ -34,3 +34,4 @@ include 'header.php';
 <?php 
 include 'footer.php';
 ?>
+

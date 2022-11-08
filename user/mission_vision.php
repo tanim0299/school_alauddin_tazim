@@ -9,15 +9,15 @@ include 'header.php';
 					<div class="left-body-boxtitle">
 						<b>লক্ষ্য উদ্দেশ্য</b>
 					</div>
-					<?php
-					$sql=$db->link->query("SELECT * FROM `mission_vision` WHERE `id`=1");
+					<?php 
+					$sql = $db->link->query("SELECT * FROM mission_vision WHERE `id`=1");
 					if($sql)
 					{
-						$showdata=$sql->fetch_assoc();
+						$showdata = $sql->fetch_assoc();
 					}
 					?>
 					<div class="body-text">
-						<?php echo $showdata['description'];?>
+						<?php echo $showdata['description']; ?>
 					</div>
 				</div>
 			</div>

@@ -11,25 +11,37 @@ include 'header.php';
 					</div>
 					<div class="body-text">
 						<div class="row">
+							<?php
+								$sql = $db->link->query("SELECT * FROM `photo_gallery` ORDER BY `id` DESC");
+								if($sql)
+								{
+								while ($showdata = $sql->fetch_array())
+								{
+							?>
 							<div class="col-6">
 								<div class="picture-box">
 									<div uk-lightbox id="photo-box">
-									    <a class="uk-button uk-button-default" href="../assets/image/photoGallery/1.jpg">
-									    	<img src="../assets/image/photoGallery/1.jpg" class="img-fluid">
-									    	<span>বৃক্ষরোপণ অভিযান</span>
+									    <a class="uk-button uk-button-default" href="../backend/asset/img/photo_gallery/<?php print $showdata['image']; ?>">
+									    	<img src="../backend/asset/img/photo_gallery/<?php print $showdata['image']; ?>" class="img-fluid">
+									    	<span><?php print $showdata['title']; ?></span>
 									    </a>
 									</div>
 								</div>
 							</div>
+							<?php
+							}
+						}
+						?>
+
 						</div>
-						<div>
+						<!-- <div>
         <samp>
             <span>Current page:</span>
             <span id="page-number-1"></span>
         </samp>
 
         <div id="pagination-1"></div>
-    </div>
+    </div> -->
 					</div>
 				</div>
 			</div>

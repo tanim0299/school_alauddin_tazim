@@ -8,6 +8,9 @@ include('../layouts/sidebar.php');
                 <div class="form-header">
                     <h4>Prospects</h4>
                 </div>
+                <div class="links">
+                    <a href="view_prospects.php" class="btn btn-info">View Prospects</a>
+                </div>
                 <?php 
                 if(isset($_POST['save']))
                 {

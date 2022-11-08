@@ -6,7 +6,7 @@ include('../layouts/sidebar.php');
         <div class="main-content">
             <section class="section">
                 <div class="form-header">
-                    <h4>CONTACT US</h4>
+                    <h4>Contact Us</h4>
                 </div>
                 <div class="form-section">
                     <?php 
@@ -35,7 +35,6 @@ include('../layouts/sidebar.php');
                     ?>
                     <form method="POST">
                         <div class="input-single-box">
-                            <label>CONTACT US</label>
 
                         <div class="input-single-box">
                             <label>Description</label>
@@ -46,9 +45,7 @@ include('../layouts/sidebar.php');
                             <label>Map :</label>
                             <textarea rows="3" name="map" class="form-control" placeholder="Map" ><?php echo $showdata['map']; ?></textarea>
                         </div>
-
-                        </div>
-                        <div class="input-single-box"">
+                        <div class="input-single-box">
                             <input type="submit" name="save" class="btn btn-success">
                         </div>
                     </form>

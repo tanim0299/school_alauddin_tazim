@@ -6,7 +6,7 @@ include('../layouts/sidebar.php');
         <div class="main-content">
             <section class="section">
                 <div class="form-header">
-                    <h4>RULES & REGULATION</h4>
+                    <h4>Rules & Regulation</h4>
                 </div>
                 <div class="form-section">
                     <?php 
@@ -35,18 +35,12 @@ include('../layouts/sidebar.php');
                     ?>
                     <form method="POST">
                         <div class="input-single-box">
-                            <label>Rules & Regulation</label>
-
-                        <div class="input-single-box">
                             <label>Title</label>
                             <input type="text" name="title" class="form-control" value="<?php print $showdata['title']; ?>" required>
                         </div>
-
                         <div class="input-single-box">
                             <label>Description</label>
                             <textarea name="description" id="" class="form-control summernote"><?php echo $showdata['description']; ?></textarea>
-                        </div>
-
                         </div>
                         <div class="input-single-box"">
                             <input type="submit" name="save" class="btn btn-success">

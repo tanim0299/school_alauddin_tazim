@@ -7,10 +7,28 @@ include 'header.php';
 			<div class="left-body">
 				<div class="left-single-box">
 					<div class="left-body-boxtitle">
-						<b>টাইটেল</b>
-					</div>
-					<div class="body-text">
+					<?php
+					if(isset($_GET['id']))
+					{
+						$id = $_GET['id'];
+						$sql = $db->link->query("SELECT * FROM `transfer_procedure` WHERE `id`=$id");
 						
+						if($sql)
+						{
+							$showdata = $sql->fetch_assoc();
+						}
+					?>
+					<b><?php echo $showdata['title']; ?></b>
+				</div>
+					<div class="body-text">
+						<div class="news">
+							<li class="list-group-item">
+                            <?php echo $showdata['description']; ?>
+								<?php
+								}
+								?>
+							</li>
+						</div>
 					</div>
 				</div>
 			</div>

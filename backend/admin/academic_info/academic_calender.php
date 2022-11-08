@@ -8,6 +8,9 @@ include('../layouts/sidebar.php');
                 <div class="form-header">
                     <h4>Academic Calender</h4>
                 </div>
+                <div class="links">
+                    <a href="view_academic_calender.php" class="btn btn-info">View Academic Calender</a>
+                </div>
                 <?php 
                 if(isset($_POST['save']))
                 {
@@ -15,6 +18,23 @@ include('../layouts/sidebar.php');
                     $title = $_POST['title'];
 
                     $db->insert('academic_calender',['date'=>$date,'title'=>$title]);
+
+                    $file = $_FILES['image']['name'];
+                    
+                    if($file)
+                    {
+                        $id = $db->link->insert_id;
+                        $extension = pathinfo($file, PATHINFO_EXTENSION);
+
+                        $image_name = rand().'.'.$extension;
+
+                        $image_path = '../../asset/img/academic_calender/'.$image_name;
+
+                        move_uploaded_file($_FILES['image']['tmp_name'],$image_path);
+
+                        $db->update('academic_calender',['image'=>$image_name],"id='$id'");
+
+                    }
 
                 }
                 ?>

@@ -55,11 +55,11 @@ include('../layouts/sidebar.php');
                                         $pathImage = $db->link->query("SELECT `image` FROM `create_admin` WHERE `id`='$id' ");
                                         $fetch_image = $pathImage->fetch_assoc();
 
-                                        $path = 'asset/img/admin_image/'.$fetch_image['image'];
+                                        $path = '../../asset/img/admin_image/'.$fetch_image['image'];
 
                                         if(file_exists($path))
                                         {
-                                            unlink($path);
+                                            unlink($path); 
                                         }
                                     }
 
@@ -71,7 +71,7 @@ include('../layouts/sidebar.php');
 
                                         $image_name = $id.'.'.$extension;
 
-                                        $path = 'asset/img/admin_image/'.$image_name;
+                                        $path = '../../asset/img/admin_image/'.$image_name;
 
                                         move_uploaded_file($_FILES['image']['tmp_name'],$path);
                                         $db->link->query("UPDATE `create_admin` SET `image`='$image_name' WHERE `id`='$id'");

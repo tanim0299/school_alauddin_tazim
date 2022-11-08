@@ -54,7 +54,7 @@ include('../layouts/sidebar.php');
 
                                     $image_name = $id.'.'.$extension;
 
-                                    $path = 'asset/img/admin_image/'.$image_name;
+                                    $path = '../../asset/img/admin_image/'.$image_name;
 
                                     move_uploaded_file($_FILES['image']['tmp_name'], $path);
 

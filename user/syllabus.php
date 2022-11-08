@@ -14,21 +14,30 @@ include 'header.php';
 							<table class="table table-hover table-bordered" id="myTable">
 								<thead>
 									<tr>
-										<th>SL</th>
 										<th>Title</th>
 										<th>Date</th>
 										<th>Download</th>
 									</tr>
 								</thead>
+									<?php
+									$sql = $db->link->query("SELECT * FROM `syllabus`");
+									if($sql)
+									{
+										while ($showdata = $sql->fetch_assoc())
+										{
+									?>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Student Info Chart</td>
-										<td>2022-05-14</td>
+									<tr style="font-size: 12px;">
+										<td><a href="view_syllabus.php?id=<?php echo $showdata['id']; ?>" style="text-decoration: none;color: black"><?php echo $showdata['title']; ?></a></td>
+										<td><a href="view_syllabus.php?id=<?php echo $showdata['id']; ?>" style="text-decoration: none;color: black"><?php echo $showdata['date']; ?></a></td>
 										<td>
-											<a href="#" class="btn btn-danger"><img src="../assets/image/pdf_icon.png" class="img-fluid"></a>
+											<a href="../backend/asset/img/syllabus/<?php print $showdata['image']; ?>" class="btn btn-sm btn-danger" download="<?php echo $showdata['title']; ?>" ><img src="../assets/image/pdf_icon.png" class="img-fluid"></a>
 										</td>
 									</tr>
+                                    <?php
+									}
+								}
+								?>
 								</tbody>
 							</table>
 						</div>

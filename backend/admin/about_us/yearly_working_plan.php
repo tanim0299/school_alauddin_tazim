@@ -8,6 +8,9 @@ include('../layouts/sidebar.php');
                 <div class="form-header">
                     <h4>Yearly Working Plan</h4>
                 </div>
+                <div class="links">
+                    <a href="view_yearly_working_plan.php" class="btn btn-info">View Yearly Working Plan</a>
+                </div>
                 <?php 
                 if(isset($_POST['save']))
                 {
@@ -15,6 +18,23 @@ include('../layouts/sidebar.php');
                     $title = $_POST['title'];
 
                     $db->insert('yearly_working_plan',['date'=>$date,'title'=>$title]);
+
+                    $file = $_FILES['image']['name'];
+                    
+                    if($file)
+                    {
+                        $id = $db->link->insert_id;
+                        $extension = pathinfo($file, PATHINFO_EXTENSION);
+
+                        $image_name = rand().'.'.$extension;
+
+                        $image_path = '../../asset/img/yearly_working_plan/'.$image_name;
+
+                        move_uploaded_file($_FILES['image']['tmp_name'],$image_path);
+
+                        $db->update('yearly_working_plan',['image'=>$image_name],"id='$id'");
+
+                    }
 
                 }
                 ?>

@@ -5,9 +5,13 @@ include('../layouts/sidebar.php');
 <!-- Start app main Content -->
         <div class="main-content">
             <section class="section">
-                <div class="form-header">
-                    <h4>About US</h4>
+            <div class="form-header">
+                    <h4>About Us</h4>
                 </div>
+                <div class="links">
+                    <a href="view_about_us.php" class="btn btn-info">View About Us</a>
+                </div>
+
                 <div class="form-section">
                     <?php 
 

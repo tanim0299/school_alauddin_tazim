@@ -7,27 +7,18 @@ include 'header.php';
 			<div class="left-body">
 				<div class="left-single-box">
 					<div class="left-body-boxtitle">
-						<?php
-						$sql=$db->link->query("SELECT * FROM `founder_message` WHERE `id`=1");
-						if($sql)
-						{
-							$showdata=$sql->fetch_assoc();
-						}
-						?>
-						<b><?php echo $showdata['title']; ?></b>
+						<b>প্রতিষ্ঠাতার বার্তা</b>
 					</div>
+					<?php
+					$sql = $db->link->query("SELECT * FROM founder_message WHERE `id`=1");
+					if($sql)
+					{
+						$showdata = $sql->fetch_assoc();
+					}
+					?>
 					<div class="body-text">
-						<div class="image" style="text-align: center;">
-							<img src="../backend/asset/img/founder_message/<?php echo $showdata['image'];?>" class="img-fluid" style="max-width: 50%;">
-						</div>
-						<p>
-						 <?php
-						 
-						 echo $showdata['description'];
-						 
-
-						 ?>
-						</p>
+							<img src="../backend/asset/img/founder_message/<?php print $showdata['image']; ?>" style="width:40%; margin-left:30%;">
+							<p><?php echo $showdata['description']; ?></p>
 					</div>
 				</div>
 			</div>

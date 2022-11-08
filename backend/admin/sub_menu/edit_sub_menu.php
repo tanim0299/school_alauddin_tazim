@@ -6,7 +6,7 @@ include('../layouts/sidebar.php');
         <div class="main-content">
             <section class="section">
                 <div class="form-header">
-                    <h4>Edit Sub Main Menu</h4>
+                    <h4>Edit Sub Menu</h4>
                 </div>
                 <div class="links">
                     <a href="view_sub_menu.php" class="btn btn-info">View Sub Menu</a>
@@ -38,7 +38,8 @@ include('../layouts/sidebar.php');
                             }
                         }
 
-                        $sql_get = $db->link->query("SELECT * FROM `sub_menu` WHERE `id`='$id'");
+                        $sql_get = $db->link->query("SELECT * FROM `sub_menu` WHERE `id`='$id.
+                            '");
 
                         if($sql_get)
                         {

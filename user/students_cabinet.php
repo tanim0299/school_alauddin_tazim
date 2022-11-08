@@ -10,27 +10,40 @@ include 'header.php';
 						<b>ছাত্র/ছাত্রী সংসদ</b>
 					</div>
 					<div class="body-text">
+						<?php
+						$sql = $db->link->query("SELECT * FROM `student_cabinet`");
+						if($sql)
+						{
+							while ($showdata = $sql->fetch_array())
+							{
+								?>
 						<div class="news">
 							<div class="news-single">
 								<div class="row">
 									<div class="col-3">
 										<div class="news-image">
-											<img src="../assets/image/studentCabinet/1.jpg" class="img-fluid">
+											<img src="../backend/asset/img/student_cabinet/<?php print $showdata['image']; ?>" class="img-fluid" style="max-height: 300px;">
 										</div>
 									</div>
 									<div class="col-8">
 										<div class="heading">
-											<a href="view_studentscabinet.php">
-												ছাত্র/ছাত্রী সংসদ
-											</a>
+											<a href="view_studentscabinet.php?id=<?php echo $showdata['0']; ?>">
+											<?php echo $showdata['2']; ?>
+										</a>
 										</div>
 										<div class="pub-date">
-											<span>2022-06-05</span>
+											<span><?php echo $showdata['1']; ?></span>
 										</div>
+										
 									</div>
+									
 								</div>
 							</div>
 						</div>
+						<?php
+						}
+					}
+					?>
 					</div>
 				</div>
 			</div>

@@ -1,7 +1,7 @@
         <!-- Start app Footer part -->
         <footer class="main-footer">
             <div class="footer-left">
-                 <div class="bullet"></div>  <a href="sbit.com.bd">SBIT</a>
+                 <div class="bullet"></div>  <a href="https://sbit.com.bd/#/">SBIT</a>
             </div>
             <div class="footer-right">
             
@@ -55,9 +55,6 @@
 <script src="../../assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
 
 
-
-
-
 <!-- Template JS File -->
 <script src="../../js/scripts.js"></script>
 <script src="../../js/custom.js"></script>
@@ -75,7 +72,50 @@
 </script>
 <!-- reload problem solve end-->
 
+<script type="text/javascript">
+    
+    $(document).ready(function(){
 
+        $('#form_data').on('submit',function(e){
+            e.preventDefault();
+          // var data = $(this).serialize();
+          var data_id = $('#id').val();
+          var data_title = $('#title').val();
+          var data_url = $('#url').val();
+          // alert(data);  
+          $.ajax({
+
+            url : 'usefull_link_update.php',
+
+            type : 'POST',
+
+            data : {id:data_id,title:data_title,url:data_url},
+
+            success : function(data)
+            {
+              // alert(data);  
+              if(data == 1)
+              {
+                location.reload(true);
+              }
+              else
+              {
+                alert('error');
+              }
+            }
+
+          });
+        });
+
+    });
+
+</script>
+
+
+
+<!-- Template JS File -->
+<script src="../../js/scripts.js"></script>
+<script src="../../js/custom.js"></script>
 </body>
 
 <!--   Tue, 07 Jan 2020 03:35:12 GMT -->

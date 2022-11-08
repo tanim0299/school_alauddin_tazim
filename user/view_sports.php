@@ -7,16 +7,30 @@ include 'header.php';
 			<div class="left-body">
 				<div class="left-single-box">
 					<div class="left-body-boxtitle">
-						<b>মাধ্যমিক ও উচ্চ মাধ্যমিক শিক্ষা বোর্ড কুমিল্লার আয়োজনে কুমিল্লার শহীদ ধীরেন্দ্রনাথ দত্ত স্টেডিয়ামে অনুষ্ঠিত ৪৮ তম আন্তঃকলেজ এ‍্যাথলেটিকস প্রতিযোগিতা</b>
-					</div>
+					<?php
+					if(isset($_GET['id']))
+					{
+						$id = $_GET['id'];
+						$sql = $db->link->query("SELECT * FROM `sports` WHERE `id`=$id");
+						
+						if($sql)
+						{
+							$showdata = $sql->fetch_assoc();
+						}
+					?>
+					<b><?php echo $showdata['title']; ?></b>
+				</div>
 					<div class="body-text">
 						<div class="news">
-							<div class="news-image">
-								<img src="../assets/image/newsImage/1.jpg" class="img-fluid">
-							</div>
-							<div class="news_text">
-								<p>বিস্তারিত:</p><br>
-							</div>
+							<li class="list-group-item">
+								<img src="../backend/asset/img/sports/<?php print $showdata['image']; ?>" class="img-fluid"><br><br>
+								<h4><?php echo $showdata['title']; ?></h4>
+								<span><?php echo $showdata['date']; ?></span><br><br>
+								<span><?php echo $showdata['description']; ?><br></span>
+								<?php
+								}
+								?>
+							</li>
 						</div>
 					</div>
 				</div>

@@ -34,7 +34,6 @@ include('../layouts/sidebar.php');
                     ?>
                     <form method="POST">
                         <div class="input-single-box">
-                            <label>History</label> 
                             <textarea name="description" id="" class="form-control summernote"><?php echo $showdata['description']; ?></textarea>
                         </div>
                         <div class="input-single-box" style="text-align: center;">

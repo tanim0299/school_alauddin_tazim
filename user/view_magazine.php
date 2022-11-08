@@ -7,16 +7,29 @@ include 'header.php';
 			<div class="left-body">
 				<div class="left-single-box">
 					<div class="left-body-boxtitle">
-						<b>ম্যাগজিন নিউজ</b>
-					</div>
+					<?php
+					if(isset($_GET['id']))
+					{
+						$id = $_GET['id'];
+						$sql = $db->link->query("SELECT * FROM `magazine` WHERE `id`=$id");
+						
+						if($sql)
+						{
+							$showdata = $sql->fetch_assoc();
+						}
+					?>
+					<b><?php echo $showdata['title']; ?></b>
+				</div>
 					<div class="body-text">
 						<div class="news">
-							<div class="news-image">
-								<img src="../assets/image/magazineImage/1.jpg" class="img-fluid">
-							</div>
-							<div class="news_text">
-								<p>বিস্তারিত:</p><br>
-							</div>
+							<li class="list-group-item">
+								<img src="../backend/asset/img/magazine/<?php print $showdata['image']; ?>" class="img-fluid"><br><br>
+								<h4><?php echo $showdata['title']; ?></h4>
+								<span><?php echo $showdata['date']; ?></span>
+								<?php
+								}
+								?>
+							</li>
 						</div>
 					</div>
 				</div>

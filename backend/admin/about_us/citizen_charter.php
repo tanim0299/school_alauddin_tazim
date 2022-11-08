@@ -6,7 +6,7 @@ include('../layouts/sidebar.php');
         <div class="main-content">
             <section class="section">
                 <div class="form-header">
-                    <h4>CITIZEN CHARTER</h4>
+                    <h4>Citizen Charter</h4>
                 </div>
                 <div class="form-section">
                    <?php
@@ -60,17 +60,14 @@ include('../layouts/sidebar.php');
                    }
                    ?>
                     <form method="post" enctype="multipart/form-data">
-                    <div class="input-single-box">
-                            <label>citizen Charter</label> 
-                            
-                        </div>
                         <div class="input-single-box">
                             <label>Title</label>
                             <input type="text" name="title" class="form-control" value="<?php print $showdata['title']; ?>" required>
                         </div>
                         <div class="input-single-box">
                             <label>Image</label>
-                            <input type="file" name="image" class="form-control">
+                            <input type="file" name="image" class="form-control"
+>
                             <?php
                             $path = '../../asset/img/citizen_charter/'.$showdata['image'];
                             if(file_exists($path))

@@ -6,7 +6,7 @@ include('../layouts/sidebar.php');
         <div class="main-content">
             <section class="section">
                 <div class="form-header">
-                    <h4>Add Sub Main Menu</h4>
+                    <h4>Add Sub Menu</h4>
                 </div>
                 <div class="links">
                     <a href="view_sub_menu.php" class="btn btn-info">View Sub Menu</a>

@@ -1,13 +1,19 @@
 <?php 
 include('../database/connection.php');
 $db=new database();
+
+$data = $db->link->query("SELECT * FROM `settings` WHERE `id`=1");
+if($data)
+{
+ $showdata = $data->fetch_assoc();
+}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>School Project</title>
+	<title><?php echo $showdata['title']; ?></title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="https://fonts.maateen.me/bangla/font.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
@@ -28,6 +34,25 @@ $db=new database();
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="../assets/css/pagination.css" />
+
+
+	<link rel="icon" type="image/x-icon" href="../backend/asset/img/settings/<?php echo $showdata['logo']; ?>">
+
+	<style>
+	.map-responsive{
+		overflow:hidden;
+		padding-bottom:56.25%;
+		position:relative;
+		height:0;
+	}
+	.map-responsive iframe{
+		left:0;
+		top:0;
+		height:100%;
+		width:100%;
+		position:absolute;
+	}
+	</style>
 	
 </head>
 <body>
@@ -48,9 +73,9 @@ $db=new database();
 							<div class="links">
 								<ul>
 									<li><a href="#">Online Exam</a></li>
-									<li><a href="#">Admission</a></li>
-									<li><a href="#">Result</a></li>
-									<li><a href="#">Student Login</a></li>
+									<li><a href="http://www.falahiafeni.edu.bd/onlineAdmission">Admission</a></li>
+									<li><a href="http://202.5.38.86/ems/result">Result</a></li>
+									<li><a href="http://202.5.38.86/ems/studentLogin">Student Login</a></li>
 								</ul>
 							</div>
 						</div>
@@ -58,11 +83,27 @@ $db=new database();
 				</div>
 				<div class="banner-area">
 					<div class="slider" id="slider1">
-				        <div style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/image/slider/1.jpg); background-position: center; background-size: cover;"></div>
-				        <div style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/image/slider/2.jpg); background-position: center; background-size: cover;"></div>
-				        
+						<?php
+						$sql = $db->link->query("SELECT * FROM `photo_gallery` WHERE `slider`=1");
+						if($sql)
+						{
+							while ($showdata = $sql->fetch_array())
+							{
+								?>
+				        <div style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../backend/asset/img/photo_gallery/<?php print $showdata['image']; ?>); background-position: center; background-size: cover;"></div>
+						<?php
+						}
+					}
+					?>
 				        <span class="titleBar">
-				         <a href="#"><img src="../assets/logo.jpg" class="img-fluid rounded"></a>&nbsp;&nbsp;<span>সরকারি ইকবাল মেমোরিয়াল কলেজ<p style="padding-left: 78px;  margin-top: -25px;">স্থাপিত : ২০০১ খ্রিঃ</p></span><br>
+						<?php
+						$data = $db->link->query("SELECT * FROM `settings` WHERE `id`=1");
+						if($data)
+						{
+							$showdata = $data->fetch_assoc();
+						}
+						?>
+				         <a href="home.php"><img src="../backend/asset/img/settings/<?php echo $showdata['logo']; ?>" class="img-fluid rounded"></a>&nbsp;&nbsp;<span><?php echo $showdata['title']; ?><p style="padding-left: 100px;  margin-top: -25px;"><?php echo $showdata['established']; ?></p></span><br>
 				       </span>
 				     </div>
 				</div>
@@ -122,11 +163,14 @@ $db=new database();
 					          			<li><a href="vice_principle_message.php">উপাধ্যক্ষ বার্তা</a></li>
 					          			<li><a href="founder_message.php">প্রতিষ্ঠাতার বার্তা</a></li>
 					          			<li><a href="president_message.php">সভাপতির বার্তা</a></li>
-					          			<li><a href="managing_comitee.php">ম্যানেজিং কমিটি</a></li>
-					          			<li><a href="chairman_list.php">চেয়ারম্যান তালিকা</a></li>
-					          			<li><a href="principle_list.php">অধ্যাক্ষ তালিকা</a></li>
-					          			<li><a href="donar_list.php">দাতা সদস্য তালিকা</a></li>
-					          			<li><a href="ex_memberlist.php">প্রাক্তন সদস্য তালিকা</a></li>
+										<?php
+										$sql=$db->link->query("SELECT * FROM `committee` LIMIT 9");
+										while ($showdata= $sql->fetch_assoc()) {
+											?>
+											<li><a href="managing_comitee.php?id=<?php echo $showdata['id'];?>"><?php echo $showdata['title'];?></a></li>
+											<?php
+											}
+											?>
 					          		</ul>
 						        </div>
 						      </li>
@@ -137,34 +181,32 @@ $db=new database();
 						        </a>
 						        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown_menu2">
 						          <div class="row">
-						          	<div class="col-6">
-						          		<ul>
-						          			<li><a href="teacher_info.php">শিক্ষক তথ্য</a></li>
-						          			<li><a href="department_teacher.php">বাংলা</a></li>
-						          			<li><a href="#">ইংলিশ</a></li>
-						          			<li><a href="#">পদার্থ বিজ্ঞান</a></li>
-						          			<li><a href="#">রসায়ন</a></li>
-						          			<li><a href="#">জীববিজ্ঞান</a></li>
-						          			<li><a href="#">হিসাব বিজ্ঞান</a></li>
-						          			<li><a href="#">ফিন্যান্স ও ব্যাংকিং</a></li>
-						          			<li><a href="#">অর্থনীতি</a></li>
-						          			<li><a href="#">ব্যাবস্থাপনা</a></li>
-						          		</ul>
-						          	</div>
-						          	<div class="col-6">
-						          		<ul>
-						          			<li><a href="#">রাষ্ট্রবিজ্ঞান</a></li>
-						          			<li><a href="#">সমাজ কর্ম</a></li>
-						          			<li><a href="#">ইসলামের ইতিহাস ও সংস্কৃতি</a></li>
-						          			<li><a href="#">দর্শন/যুক্তিবিদ্যা</a></li>
-						          			<li><a href="#">পরিসংখ্যান</a></li>
-						          			<li><a href="#">কম্পিউটার অপারেশন</a></li>
-						          			<li><a href="#">লাইব্রেরী</a></li>
-						          			<li><a href="#">স্পোর্টস</a></li>
-						          			<li><a href="#">আইসিটি</a></li>
-						          			<li><a href="#">কর্মচারী তথ্য</a></li>
-						          		</ul>
-						          	</div>
+								  <div class="col-6">
+									<ul>
+										<li><a href="teacher_info.php">শিক্ষক তথ্য</a></li>
+										<?php
+										$sql=$db->link->query("SELECT * FROM `department` LIMIT 9");
+										while ($showdata= $sql->fetch_assoc()) {
+											?>
+											<li><a href="department_teacher.php?id=<?php echo $showdata['id'];?>"><?php echo $showdata['title'];?></a></li>
+											<?php
+											}
+											?>
+										</ul>
+									</div>
+									<div class="col-6">
+										<ul>
+											<?php
+											$sql=$db->link->query("SELECT * FROM `department` LIMIT 9,9");
+											while ($showdata= $sql->fetch_assoc()) {
+												?>
+												<li><a href="department_teacher.php?id=<?php echo $showdata['id'];?>"><?php echo $showdata['title'];?></a></li>
+												<?php
+												}
+												?>
+											<li><a href="staff_info.php">কর্মচারী তথ্য</a></li>
+										</ul>
+									</div>
 						          </div>
 						        </div>
 						      </li>
@@ -179,11 +221,10 @@ $db=new database();
 					          			<li><a href="academic_calendar.php">একাডেমিক ক্যালেন্ডার</a></li>
 					          			<li><a href="class_routine.php">ক্লাস রুটিন</a></li>
 					          			<li><a href="online_class_routine.php">অনলাইন ক্লাস রুটিন</a></li>
-					          			<li><a href="booklist.php">বই তালিকা</a></li>
+					          			<li><a href="book_list.php">বই তালিকা</a></li>
 					          			<li><a href="uniform.php">ইউনিফর্ম</a></li>
 					          			<li><a href="fees.php">ফিস</a></li>
-					          			<li><a href="holiday.php">ছুটি তালিকা</a></li>
-					          			<!-- <li><a href="#">প্রাক্তন সদস্য তালিকা</a></li> -->
+					          			<li><a href="holiday_list.php">ছুটি তালিকা</a></li>
 					          		</ul>
 						        </div>
 						      </li>
@@ -258,8 +299,8 @@ $db=new database();
 						        </a>
 						        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown_menu">
 						          <ul>
-					          			<li><a href="#">পাবলিক পরীক্ষার ফলাফল</a></li>
-					          			<li><a href="https://eboardresults.com/v2/home">অভ্যন্তরীণ ফলাফল</a></li>
+					          			<li><a href="https://eboardresults.com/v2/home">পাবলিক পরীক্ষার ফলাফল</a></li>
+					          			<li><a href="http://202.5.38.86/ems/result">অভ্যন্তরীণ ফলাফল</a></li>
 					          		</ul>
 						        </div>
 						      </li>

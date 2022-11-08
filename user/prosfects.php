@@ -14,21 +14,30 @@ include 'header.php';
 							<table class="table table-hover table-bordered" id="myTable">
 								<thead>
 									<tr>
-										<th>SL</th>
 										<th>Title</th>
 										<th>Date</th>
-										<th>Download</th>
+										<th>View</th>
 									</tr>
 								</thead>
+                                <?php
+							$sql = $db->link->query("SELECT * FROM `prospects`");
+							if($sql)
+							{
+								while ($showdata = $sql->fetch_array())
+								{
+									?>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Student Info Chart</td>
-										<td>2022-05-14</td>
+									<tr style="font-size: 15px;">
+										<td><a href="view_prosfects.php?id=<?php echo $showdata['0']; ?>" style="text-decoration: none;color: black"><?php echo $showdata['2']; ?></a></td>
+										<td><a href="view_prosfects.php?id=<?php echo $showdata['0']; ?>" style="text-decoration: none;color: black"><?php echo $showdata['1']; ?></a></td>
 										<td>
-											<a href="view_details.php" class="btn btn-success">View</a>
+											<a href="view_prosfects.php?id=<?php echo $showdata['0']; ?>" class="btn btn-success">View</a>
 										</td>
 									</tr>
+                                    <?php
+									}
+								}
+								?>
 								</tbody>
 							</table>
 						</div>
