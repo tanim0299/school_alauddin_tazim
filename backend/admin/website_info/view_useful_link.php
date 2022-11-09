@@ -6,15 +6,16 @@ include('../layouts/sidebar.php');
         <div class="main-content">
             <section class="section">
                 <div class="form-header">
-                    <h4>View Usefull Link</h4>
+                    <h4>View Useful Link</h4>
                 </div>
                 <div class="links">
-                    <a href="useful_link.php" class="btn btn-info">Add Usefull Link</a>
+                    <a href="useful_link.php" class="btn btn-info">Add Useful Link</a>
                 </div>
                 <div class="form-section">
                     <table class="table table-striped v_center" id="table-2">
                         <thead>
                             <tr>
+                                <th>Sl</th>
                                 <th>Title</th>
                                 <th>Url</th>
                                 <th>Action</th>
@@ -22,13 +23,15 @@ include('../layouts/sidebar.php');
                         </thead>
                         <tbody>
                             <?php 
-                            $sql = $db->link->query("SELECT * FROM `useful_link`");
+                            $sql = $db->link->query("SELECT * FROM `useful_link` ORDER BY `id` DESC");
                             if($sql)
                             {
+                                $sl = 1;
                                 while ($showdata = $sql->fetch_assoc()) 
                                 {
                                 ?>
                                 <tr>
+                                    <td><?php echo $sl++; ?></td>
                                     <td><?php echo $showdata['title']; ?></td>
                                     <td><a href="<?php echo $showdata['url']; ?>" target="blank"><?php echo $showdata['url']; ?></a></td>
                                     <td>
@@ -42,7 +45,7 @@ include('../layouts/sidebar.php');
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Edit Usefull Link</h5>
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Edit Useful Link</h5>
                                         </div>
                                         <div class="modal-body">
                         <?php
@@ -63,7 +66,7 @@ include('../layouts/sidebar.php');
                     }
                     ?>
                     <form method="POST" enctype="multipart/form-data" id="form_data">
-                        <input id="id" type="text" name="id" class="form-control" value="<?php echo $showdata['id'];?>">
+                        <input id="id" type="hidden" name="id" class="form-control" value="<?php echo $showdata['id'];?>">
                         <div class="input-single-box">
                             <label>Title</label>
                             <input id="title" name="title" class="form-control" value="<?php echo $showdata['title'];?>">

@@ -186,10 +186,10 @@
                             </div>
                         </div>
                     </div>
-
                      <div class="input-single-box">
                         <label>Education Qualification :</label>
                         <textarea type="text" name="education" class="form-control summernote"></textarea>
+                        
                     </div>
 
                     <div class="input-single-box">
@@ -228,7 +228,7 @@
                     </div>
                     
                      
-                    <div class="input-single-box btn-group" style="text-align: center;">
+                    <div class="input-single-box" style="text-align: center;">
                         <input type="submit" name="save"
                         class="btn btn-success" id="save">
                     </div>

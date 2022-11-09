@@ -40,19 +40,22 @@
                <table class="table table-striped v_center" id="table-2">
                         <thead>
                             <tr>  
+                                <th>Sl</th>
                                 <th>Name</th>
                                 <th>Action</th>    
                             </tr> 
                         </thead>
                         <tbody>
                             <?php 
-                            $sql = $db->link->query("SELECT * FROM `committee`");
+                            $sql = $db->link->query("SELECT * FROM `committee` ORDER BY `id` DESC");
                             if($sql)
                             {
+                                $sl = 1;
                                 while ($showdata = $sql->fetch_array()) 
                                 {
                                 ?>
                                 <tr>
+                                    <td><?php echo $sl++; ?></td>
                                     <td><?php echo $showdata['1']; ?></td>
                                     <td>
                                        <a href="edit_committee.php?id=<?php echo $showdata['0']; ?>" class="btn btn-outline-info">Edit</a>

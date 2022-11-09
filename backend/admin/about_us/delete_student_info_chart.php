@@ -8,6 +8,15 @@ if(isset($_GET['id']))
 
 	// print $id;
 
+	$pathImage =$db->link->query("SELECT `image` FROM `student_info` WHERE `id`='$id' ");
+    $fetch_image= $pathImage->fetch_assoc();
+
+    $path = '../../asset/img/student_info_chart/'.$fetch_image['image'];
+    if(file_exists($path))
+    {
+        unlink($path);
+    }
+
 	$sql = $db->link->query("DELETE FROM `student_info` WHERE `id`='$id'");
 
 	if($sql)

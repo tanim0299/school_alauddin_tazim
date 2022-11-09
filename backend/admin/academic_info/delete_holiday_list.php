@@ -8,6 +8,15 @@ if(isset($_GET['id']))
 
 	// print $id;
 
+	$pathImage =$db->link->query("SELECT `image` FROM `holiday_list` WHERE `id`='$id' ");
+    $fetch_image= $pathImage->fetch_assoc();
+
+    $path = '../../asset/img/holiday_list/'.$fetch_image['image'];
+    if(file_exists($path))
+    {
+        unlink($path);
+    }
+
 	$sql = $db->link->query("DELETE FROM `holiday_list` WHERE `id`='$id'");
 
 	if($sql)

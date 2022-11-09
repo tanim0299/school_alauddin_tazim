@@ -2,28 +2,6 @@
 <div class="left-body">
 				<div class="leftbody-single-box">
 					<div class="left-body-boxtitle">
-						<b>সভাপতির বার্তা</b>
-						<?php
-						$sql = $db->link->query("SELECT * FROM president_message WHERE `id`=1");
-						if($sql)
-						{
-							$showdata = $sql->fetch_assoc();
-						}
-						?>
-					</div>
-					<div class="box-image">
-						<img src="../backend/asset/img/president_message/<?php print $showdata['image']; ?>">
-					</div>
-					<div class="designation">
-						<span><?php print $showdata['name']; ?></span>
-					</div>
-					<div class="subtitle">
-						<span><a href="president_message.php" class="btn btn-success btn-sm btn-block">View Message</a></span>
-					</div>
-				</div>
-
-				<div class="leftbody-single-box">
-					<div class="left-body-boxtitle">
 						<b>অধ্যক্ষের বার্তা</b>
 						<?php
 						$sql = $db->link->query("SELECT * FROM principle_message WHERE `id`=1");
@@ -41,6 +19,7 @@
 					</div>
 					<div class="subtitle">
 						<span><a href="principle_message.php" class="btn btn-success btn-sm btn-block">View Message</a></span>
+					</div>
 					</div>
 				</div>
 				

@@ -90,6 +90,7 @@
                <table class="table table-striped v_center" id="table-2">
                         <thead>
                             <tr>  
+                                <th>Sl</th>
                                 <th>Class Name</th>
                                 <th>Group Name</th>
                                 <th>Section Name</th>
@@ -98,13 +99,15 @@
                         </thead>
                         <tbody>
                             <?php 
-                            $sql=$db->link->query("SELECT add_section.*,add_class.class,add_group.group FROM `add_section` JOIN `add_class` JOIN `add_group` ON add_section.class_id=add_class.id AND add_section.group_id=add_group.id");
+                            $sql=$db->link->query("SELECT add_section.*,add_class.class,add_group.group FROM `add_section` JOIN `add_class` JOIN `add_group` ON add_section.class_id=add_class.id AND add_section.group_id=add_group.id ORDER BY `id` DESC");
                             if($sql)
                             {
+                              $sl = 1;
                                 while ($showdata = $sql->fetch_assoc()) 
                                 {
                                 ?>
                                 <tr>
+                                    <td><?php echo $sl++; ?></td>
                                     <td><?php echo $showdata['class']; ?></td>
                                     <td><?php echo $showdata['group']; ?></td>
                                     <td><?php echo $showdata['section']; ?></td>

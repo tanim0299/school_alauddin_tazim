@@ -6,10 +6,10 @@ include('../layouts/sidebar.php');
         <div class="main-content">
             <section class="section">
                 <div class="form-header">
-                    <h4>Usefull Link</h4>
+                    <h4>Useful Link</h4>
                 </div>
                 <div class="links">
-                    <a href="view_useful_link.php" class="btn btn-info">View Usefull Link</a>
+                    <a href="view_useful_link.php" class="btn btn-info">View Useful Link</a>
                 </div>
                 <?php 
                 if(isset($_POST['save']))

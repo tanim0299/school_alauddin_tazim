@@ -15,6 +15,7 @@ include('../layouts/sidebar.php');
                     <table class="table table-striped v_center" id="table-2">
                         <thead>
                             <tr>
+                                <th>Sl</th>
                                 <th>Title</th>
                                 <th>Details</th>
                                 <th>Url</th>
@@ -23,13 +24,15 @@ include('../layouts/sidebar.php');
                         </thead>
                         <tbody>
                             <?php 
-                            $sql = $db->link->query("SELECT * FROM `video_gallery`");
+                            $sql = $db->link->query("SELECT * FROM `video_gallery` ORDER BY `id` DESC");
                             if($sql)
                             {
+                                $sl = 1;
                                 while ($showdata = $sql->fetch_array()) 
                                 {
                                 ?>
                                 <tr>
+                                    <td><?php echo $sl++; ?></td>
                                     <td><?php echo $showdata['1']; ?></td>
                                     <td><i class="fa-solid fa-ellipsis"></td>
                                     <td><a href="<?php echo $showdata['url']; ?>" target="blank"><?php echo $showdata['url']; ?></a></td>

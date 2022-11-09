@@ -14,20 +14,23 @@ include 'header.php';
 							<table class="table table-hover table-bordered" id="myTable">
 								<thead>
 									<tr>
+										<th>Sl</th>
 										<th>Title</th>
 										<th>Date</th>
 										<th>Download</th>
 									</tr>
 								</thead>
 									<?php
-									$sql = $db->link->query("SELECT * FROM `exam_routine`");
+									$sql = $db->link->query("SELECT * FROM `exam_routine` ORDER BY `date` DESC");
 									if($sql)
 									{
+										$sl = 1;
 										while ($showdata = $sql->fetch_assoc())
 										{
 									?>
 								<tbody>
 									<tr style="font-size: 12px;">
+										<td><a href="view_exam_routine.php?id=<?php echo $showdata['0']; ?>" style="text-decoration: none;color: black"><?php echo $sl++; ?></a></td>
 										<td><a href="view_exam_routine.php?id=<?php echo $showdata['id']; ?>" style="text-decoration: none;color: black"><?php echo $showdata['title']; ?></a></td>
 										<td><a href="view_exam_routine.php?id=<?php echo $showdata['id']; ?>" style="text-decoration: none;color: black"><?php echo $showdata['date']; ?></a></td>
 										<td>

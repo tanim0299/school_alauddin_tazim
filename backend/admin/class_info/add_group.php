@@ -61,7 +61,7 @@
                      
     </section>
     <?php
-  $sql=$db->link->query("SELECT add_group.*,add_class.class FROM `add_group` INNER JOIN `add_class` ON add_group.class_id=add_class.id");
+  $sql=$db->link->query("SELECT add_group.*,add_class.class FROM `add_group` INNER JOIN `add_class` ON add_group.class_id=add_class.id ORDER BY `id` DESC");
   if (mysqli_num_rows($sql) > 0) 
   {
  ?>
@@ -69,6 +69,7 @@
                <table class="table table-striped v_center" id="table-2">
                         <thead>
                             <tr>  
+                                <th>Sl</th>
                                 <th>Class Name</th>
                                 <th>Group Name</th>
                                 <th>Action</th>    
@@ -76,13 +77,15 @@
                         </thead>
                         <tbody>
                             <?php 
-                            $sql=$db->link->query("SELECT add_group.*,add_class.class FROM `add_group` INNER JOIN `add_class` ON add_group.class_id=add_class.id");
+                            $sql=$db->link->query("SELECT add_group.*,add_class.class FROM `add_group` INNER JOIN `add_class` ON add_group.class_id=add_class.id ORDER BY `id` DESC");
                             if($sql)
                             {
+                                $sl = 1;
                                 while ($showdata = $sql->fetch_assoc()) 
                                 {
                                 ?>
                                 <tr>
+                                    <td><?php echo $sl++; ?></td>
                                     <td><?php echo $showdata['class']; ?></td>
                                     <td><?php echo $showdata['group']; ?></td>
                                     <td>

@@ -11,6 +11,7 @@
                <table class="table table-striped v_center" id="table-2">
                         <thead>
                             <tr>
+                                <th>Sl</th>
                                 <th>Name</th>
                                 <th>Mobile</th>
                                 <th>Email</th>
@@ -22,13 +23,15 @@
                         </thead>
                         <tbody>
                             <?php 
-                            $sql = $db->link->query("SELECT add_member.*,committee.title FROM `add_member` INNER JOIN `committee` on add_member.committee=committee.id");
+                            $sql = $db->link->query("SELECT add_member.*,committee.title FROM `add_member` INNER JOIN `committee` on add_member.committee=committee.id ORDER BY `id` DESC");
                             if($sql)
                             {
+                                $sl = 1;
                                 while ($showdata = $sql->fetch_assoc()) 
                                 {
                                 ?>
                                 <tr>
+                                    <td><?php echo $sl++; ?></td>
                                     <td><?php echo $showdata['name']; ?></td>
                                     <td><?php echo $showdata['mobile']; ?></td>
                                     <td><?php echo $showdata['email']; ?></td>

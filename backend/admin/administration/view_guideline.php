@@ -16,6 +16,7 @@ include('../layouts/sidebar.php');
                         <thead>
                             <tr>
                                 <th>Sl</th>
+                                <th>Date</th>
                                 <th>Title</th>
                                 <th>Details</th>
                                 <th>File</th>
@@ -24,13 +25,15 @@ include('../layouts/sidebar.php');
                         </thead>
                         <tbody>
                             <?php 
-                            $sql = $db->link->query("SELECT * FROM `guideline`");
+                            $sql = $db->link->query("SELECT * FROM `guideline` ORDER BY `id` DESC");
                             if($sql)
                             {
+                                $sl = 1;
                                 while ($showdata = $sql->fetch_array()) 
                                 {
                                 ?>
                                 <tr>
+                                    <td><?php echo $sl++; ?></td>
                                     <td><?php echo $showdata['1']; ?></td>
                                     <td><?php echo $showdata['2']; ?></td>
                                     <td><i class="fa-solid fa-ellipsis"></i></td>

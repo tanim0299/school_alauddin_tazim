@@ -13,7 +13,7 @@ include('../layouts/sidebar.php');
                 </div>
                     
                     <?php
-                    $sql=$db->link->query("SELECT online_class_routine.*,add_class.class FROM `online_class_routine` INNER JOIN `add_class` ON online_class_routine.class_id=add_class.id");
+                    $sql=$db->link->query("SELECT online_class_routine.*,add_class.class FROM `online_class_routine` INNER JOIN `add_class` ON online_class_routine.class_id=add_class.id ORDER BY `id` DESC");
                     if (mysqli_num_rows($sql) > 0)
                     {
                     ?>
@@ -21,6 +21,7 @@ include('../layouts/sidebar.php');
                         <table class="table table-striped v_center" id="table-2">
                         <thead>
                             <tr>  
+                                <th>Sl</th>
                                 <th>Date</th>
                                 <th>Class Name</th>
                                 <th>Title</th>
@@ -30,13 +31,15 @@ include('../layouts/sidebar.php');
                         </thead>
                         <tbody>
                             <?php 
-                            $sql=$db->link->query("SELECT online_class_routine.*,add_class.class FROM `online_class_routine` INNER JOIN `add_class` ON online_class_routine.class_id=add_class.id");
+                            $sql=$db->link->query("SELECT online_class_routine.*,add_class.class FROM `online_class_routine` INNER JOIN `add_class` ON online_class_routine.class_id=add_class.id ORDER BY `id` DESC");
                             if($sql)
                             {
+                                $sl = 1;
                                 while ($showdata = $sql->fetch_assoc()) 
                                 {
                                 ?>
                                 <tr>
+                                    <td><?php echo $sl++; ?></td>
                                     <td><?php echo $showdata['date']; ?></td>
                                     <td><?php echo $showdata['class']; ?></td>
                                     <td><?php echo $showdata['title']; ?></td>

@@ -11,7 +11,7 @@ include 'header.php';
 					</div>
 					<div class="body-text">
 						<?php
-						$sql = $db->link->query("SELECT * FROM `sports`");
+						$sql = $db->link->query("SELECT * FROM `sports` ORDER BY `id` DESC");
 						if($sql)
 						{
 							while ($showdata = $sql->fetch_array())

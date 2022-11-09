@@ -72,6 +72,7 @@
 </script>
 <!-- reload problem solve end-->
 
+<!-- start useul link ajax -->
 <script type="text/javascript">
     
     $(document).ready(function(){
@@ -85,7 +86,7 @@
           // alert(data);  
           $.ajax({
 
-            url : 'usefull_link_update.php',
+            url : 'useful_link_update.php',
 
             type : 'POST',
 
@@ -110,6 +111,7 @@
     });
 
 </script>
+<!-- end useul link ajax -->
 
 
 

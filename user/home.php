@@ -94,8 +94,8 @@ include 'header.php';
 										<div class="col-8">
 											<div class="list">
 												<ul>
-													<li><i class="fa fa-caret-right"></i><a href="principle_message.php">অধ্যক্ষ বার্তা</a></li>
-													<li><i class="fa fa-caret-right"></i><a href="vice_principle_message.php">উপাধ্যক্ষ বার্তা</a></li>
+													<li><i class="fa fa-caret-right"></i><a href="principle_message.php">অধ্যক্ষ্য বার্তা</a></li>
+													<li><i class="fa fa-caret-right"></i><a href="vice_principle_message.php">উপাঅধ্যক্ষ্য বার্তা</a></li>
 													<li><i class="fa fa-caret-right"></i><a href="founder_message.php">প্রতিষ্ঠাতার বার্তা</a></li>
 													<li><i class="fa fa-caret-right"></i><a href="president_message.php">সভাপতির বার্তা</a></li>
 												</ul>
@@ -197,7 +197,7 @@ include 'header.php';
 										<div class="col-8">
 											<div class="list">
 												<ul>
-													<li><i class="fa fa-caret-right"></i><a href="http://202.5.38.86/ems/result">অভ্যন্তরীণ ফলাফল</a></li>
+													<li><i class="fa fa-caret-right"></i><a href="#">অভ্যন্তরীণ ফলাফল</a></li>
 													<li><i class="fa fa-caret-right"></i><a href="https://eboardresults.com/v2/home">পাবলিক পরীক্ষার ফলাফল</a></li>
 												</ul>
 											</div>
@@ -221,9 +221,9 @@ include 'header.php';
 										<div class="col-8">
 											<div class="list">
 												<ul>
-													<li><i class="fa fa-caret-right"></i><a href="photo_gallery.php">ছবি গ্যালারী</a></li>
-													<li><i class="fa fa-caret-right"></i><a href="video_gallery.php">ভিডিও গ্যালারী</a></li>
-													<li><i class="fa fa-caret-right"></i><a href="magazine.php">ম্যাগাজিন</a></li>
+													<li><i class="fa fa-caret-right"></i><a href="#">ছবি গ্যালারী</a></li>
+													<li><i class="fa fa-caret-right"></i><a href="#">ভিডিও গ্যালারী</a></li>
+													<li><i class="fa fa-caret-right"></i><a href="#">ম্যাগাজিন</a></li>
 												</ul>
 											</div>
 										</div>
@@ -246,7 +246,7 @@ include 'header.php';
 										<div class="col-8">
 											<div class="list">
 												<ul>
-													<li><i class="fa fa-caret-right"></i><a href="prosfects.php">প্রসফেকটস</a></li>
+													<li><i class="fa fa-caret-right"></i><a href="prosepects.php">প্রসফেকটস</a></li>
 													<li><i class="fa fa-caret-right"></i><a href="admission_rules.php">ভর্তির নিয়মাবলি</a></li>
 													<li><i class="fa fa-caret-right"></i><a href="admission_procedure.php">ভর্তির কার্যাবলি</a></li>
 													<li><i class="fa fa-caret-right"></i><a href="admission_result.php">ভর্তির পরীক্ষার ফলাফল</a></li>
